@@ -8,13 +8,13 @@ BUMBÁ-CODE
 
 Grupo Mandaracu
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://github.com/kaianes">Kaiane Souza</a>, <a href="https://github.com/pelinsarix">Gabriel Pelinsari</a>, <a href="https://github.com/jjrkkj">Joselito Junior</a>, <a href="https://github.com/vitorianovaes">Vitoria Novais</a>, <a href="https://github.com/DiogoBurgierman">Diogo Burgierman</a>
 
 ## Descrição
 
-📜 Descrição curta sobre o que seu projeto faz.
+📜 Somos o grupo "Mandacaru" e estamos desenvolvendo um game para ensinar lógica de programação e matemática básica para crianças junto com a UFAL (Universidade Federal de Alagoas)
 <br><br>
-Meu projeto é um exemplo de como utilizar o github.
+Meu projeto e toda sua documentação vão ser documentados nesse repositório.
 <br><br>
 <p align="center">
 <img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
