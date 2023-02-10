@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends ColorRect
+
+# Variável do array
+var array = []
+var iniciou = false
+
+
+func _adicionar_comando (direcao):
+	array.push_back(direcao)
+
+func _on_ButtonCima_pressed():
+	_adicionar_comando(\"cima\")
+
+func _on_ButtonBaixo_pressed():
+	_adicionar_comando(\"baixo\")
+
+func _on_ButtonDireita_pressed():
+	_adicionar_comando(\"direita\")
+
+func _on_ButtonEsquerda_pressed():
+	_adicionar_comando(\"esquerda\")
+
+func _on_Iniciar_pressed():
+	iniciou=true
+"
+
+[node name="AbaDeSelecao" type="Node2D"]
+
+[node name="Comandos" type="ColorRect" parent="."]
+margin_left = 1.0
+margin_top = 845.0
+margin_right = 1918.0
+margin_bottom = 1077.0
+color = Color( 0.364706, 0.0470588, 0.560784, 0.521569 )
+script = SubResource( 3 )
+
+[node name="ButtonCima" type="Button" parent="Comandos"]
+margin_left = 328.0
+margin_top = 37.0
+margin_right = 374.0
+margin_bottom = 196.0
+text = "CIMA"
+
+[node name="ButtonBaixo" type="Button" parent="Comandos"]
+margin_left = 531.0
+margin_top = 40.0
+margin_right = 585.0
+margin_bottom = 199.0
+text = "BAIXO"
+
+[node name="ButtonDireita" type="Button" parent="Comandos"]
+margin_left = 239.0
+margin_top = 37.0
+margin_right = 302.0
+margin_bottom = 196.0
+text = "DIREITA"
+
+[node name="ButtonEsquerda" type="Button" parent="Comandos"]
+margin_left = 419.0
+margin_top = 39.0
+margin_right = 500.0
+margin_bottom = 198.0
+text = "ESQUERDA"
+
+[node name="Iniciar" type="Button" parent="Comandos"]
+margin_left = 697.0
+margin_top = 44.0
+margin_right = 759.0
+margin_bottom = 203.0
+text = "INICIAR"
+
+[connection signal="pressed" from="Comandos/ButtonCima" to="Comandos" method="_on_ButtonBaixo_pressed"]
+[connection signal="pressed" from="Comandos/ButtonBaixo" to="Comandos" method="_on_ButtonBaixo_pressed"]
+[connection signal="pressed" from="Comandos/ButtonDireita" to="Comandos" method="_on_ButtonDireita_pressed"]
+[connection signal="pressed" from="Comandos/ButtonEsquerda" to="Comandos" method="_on_ButtonEsquerda_pressed"]
+[connection signal="pressed" from="Comandos/Iniciar" to="Comandos" method="_on_Iniciar_pressed"]
