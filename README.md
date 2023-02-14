@@ -8,7 +8,7 @@ BUMBÁ-CODE
 
 Grupo Mandaracu
 
-## Integrantes: <a href="https://github.com/kaianes">Kaiane Souza</a>, <a href="https://github.com/pelinsarix">Gabriel Pelinsari</a>, <a href="https://github.com/jjrkkj">Joselito Junior</a>, <a href="https://github.com/vitorianovaes">Vitoria Novais</a>, <a href="https://github.com/DiogoBurgierman">Diogo Burgierman</a>
+## Integrantes: <a href="https://github.com/kaianes/Tutorial_M1_Kaiane_Souza">Kaiane Souza</a>, <a href="https://github.com/pelinsarix/Tutorial_M1_Gabriel_Ribeiro">Gabriel Pelinsari</a>, <a href="https://github.com/jjrkkj/Tutorial_M1_Joselito_Carvalho">Joselito Junior</a>, <a href="https://github.com/vitorianovaes">Vitoria Novais</a>, <a href="https://github.com/DiogoBurgierman/Tutorial_M1_Diogo_Burgierman">Diogo Burgierman</a>, <a href="https://github.com/Freddyharari/Tutorial_M1_freddy_harari">Freddy Harari</a>, <a href="https://github.com/PatrickSavoia/Tutorial_M1_Patrick_Savoia">Patrick Savoia</a>
 
 ## Descrição
 
