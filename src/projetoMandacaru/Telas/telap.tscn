@@ -458,7 +458,7 @@ func _physics_process(delta):
 		temporizador += 1
 		print(temporizador)
 		
-	if temporizador >= 240:
+	if temporizador >= 180:
 		comecou = false
 		movimento.x = 0
 		movimento.y = 0
