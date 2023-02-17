@@ -469,7 +469,7 @@ func _physics_process(delta):
 	move_and_slide(movimento)
 
 func trocarcena():
-	get_tree().change_scene(\"res://Telas/Control.tscn\")
+	get_tree().change_scene(\"res://Telas/cenaCatedral.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -524,7 +524,6 @@ shape = SubResource( 5 )
 position = Vector2( 107, 129 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 12 )
-frame = 2
 playing = true
 
 [node name="ObjetosMapa" type="TileMap" parent="."]
