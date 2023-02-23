@@ -61,10 +61,3 @@ pointing/emulate_touch_from_mouse=true
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-quality/filters/sharpen_intensity=1.0
-quality/intended_usage/framebuffer_allocation=0
-quality/intended_usage/framebuffer_allocation.mobile=0
-threads/thread_model=2
