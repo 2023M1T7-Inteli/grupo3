@@ -13,7 +13,7 @@ func _process(delta):
 	if validacao:
 		relogio += 1
 		if relogio >= 140:
-#			$transicao/animacaoTransicao/fundo.hide()
+			$transicao/animacaoTransicao/fundo.hide()
 			validacao = false
 			relogio = 0 
 			
