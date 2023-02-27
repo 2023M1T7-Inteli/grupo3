@@ -210,7 +210,6 @@ icon_align = 1
 expand_icon = true
 
 [node name="transicao" parent="." instance=ExtResource( 8 )]
-position = Vector2( 30, -28 )
 
 [connection signal="mouse_entered" from="caixaBotoes/botaoIniciar" to="." method="_on_botaoIniciar_mouse_entered"]
 [connection signal="pressed" from="caixaBotoes/botaoIniciar" to="." method="_on_botaoIniciar_pressed"]
