@@ -445,57 +445,99 @@ var comecou = false
 #variável booleana que confere se o jogador perdeu
 var perdeu = false
 
-#função que 
-func _physics_process(delta):	
+#função que inicia, simulando os valores de física do jogo
+func _physics_process(delta):
+	#condição que inicia se a variável global \"iniciou\" for verdadeira
 	if Global.iniciou:
+		#torna a variável \"começou\" verdadeira
 		comecou = true
+		#condição que inicia se a variável \"contador\" for maior ou igual à variável global \"iniciou\"
 		if contador >= Global.lista.size():
+			#inicia o som \"somPerdeu\"
 			$somPerdeu.play()
+			#inicia a função \"adicionarcenaperdeu\" que traz a cena de Game Over
 			adicionarcenaperdeu()
+			#torna a variável \"perdeu\" verdadeira
 			perdeu = true
+		#inicia se a condição acima não for satisfeita
 		else:
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"esquerda\"
 			if Global.lista[contador] == \"esquerda\":
+				#adiciona o valor -200 ao vetor x da variável \"movimento\"
 				movimento.x = -200
+				#inicia a animação \"Direita\", que simula a moviemtação para a direita
 				$animacaoPersonagem.play(\"Direita\")
+				#inverte horizontalmente a animação, para simular uma movimentação para a esquerda
 				$animacaoPersonagem.flip_h = true
+				#inicia o som \"somPassos\"
 				$somPassos.play()
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"direita\"
 			elif Global.lista[contador] == \"direita\":
+				#adiciona o valor 200 ao vetor x da variável \"movimento\"
 				movimento.x = 200
+				#inicia a animação \"Direita\", que simula a moviemtação para a direita
 				$animacaoPersonagem.play(\"Direita\")
+				#inicia o som \"somPassos\"
 				$somPassos.play()
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"cima\"
 			elif Global.lista[contador] == \"cima\":
+				#adiciona o valor -200 ao vetor y da variável \"movimento\"
 				movimento.y = -200
+				#inicia a animação \"Sobe\", que simula a moviemtação para cima
 				$animacaoPersonagem.play(\"Sobe\")
+				#inicia o som \"somPassos\"
 				$somPassos.play()
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"baixo\"
 			elif Global.lista[contador] == \"baixo\":
+				#adiciona o valor 200 ao vetor y da variável \"movimento\"
 				movimento.y = 200
+				#inicia a animação \"Desce\", que simula a moviemtação para baixo
 				$animacaoPersonagem.play(\"Desce\")
+				#inicia o som \"somPassos\"
 				$somPassos.play()
+		#Torna a variável global \"iniciou\" falsa
 		Global.iniciou = false
-	
+		
+	#condição que inicia se a variável \"perdeu\" for verdadeira
 	if perdeu:
+		#torna a variável \"começou\" falsa
 		comecou = false
+		#reinicia a variável \"temporizador\" para 0
 		temporizador = 0
 		
+	#condição que inicia se a variável \"começou\" for verdadeira
 	if comecou:
+		#adiciona o valor 1 ao temporizador
 		temporizador += 1
-		print(temporizador)
 		
+	#condição que inicia se a variável \"temporizador\" for maior ou igual à 180
 	if temporizador >= 180:
+		#torna a variável \"começou\" falsa
 		comecou = false
+		#reinicia o vetor x da variável \"movimento\" para 0
 		movimento.x = 0
+		#reinicia o vetor x da variável \"movimento\" para 0
 		movimento.y = 0
+		#reinicia a variável \"temporizador\" para 0
 		temporizador = 0
+		#adicona o valor 1 à variável \"contador\"
 		contador += 1
+		#Torna a variável global \"iniciou\" verdadeira
 		Global.iniciou = true
 		
+	#instancia a funcção interna \"move_and_slide\", que simula a movimentação levando como parâmetro a variável \"movimento\"
 	move_and_slide(movimento)
-
+	
+#função que, quando instanciada, troca a cena atual
 func trocarcena():
+	#abre uma árvore de cenas, mudando para a cena \"cenaCatedral\"
 	get_tree().change_scene(\"res://Telas/cenaCatedral.tscn\")
 	
+#função que, quando instanciada, adiciona uma cena flutuante que simula o Game Over
 func adicionarcenaperdeu():
-	var preloadcenaperdeu = preload(\"res://Telas/cenaperdeu.tscn\").instance()
+	#variável que armazena um pré-carregamento da cena \"cenaperdeu\"
+	var preloadcenaperdeu = preload(\"res://Telas/cenaPerdeu.tscn\").instance()
+	#adiciona uma cena filha com o valor de \"preloadcenaperdeu\"
 	get_tree().current_scene.add_child(preloadcenaperdeu)
 "
 

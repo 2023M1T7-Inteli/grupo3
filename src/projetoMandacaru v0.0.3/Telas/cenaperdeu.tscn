@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Codigos/cenaperdeu.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sons/sombotaopressionado.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sons/sombotaopressionado.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Codigos/cenaperdeu.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -110,20 +110,20 @@ tracks/3/keys = {
 
 [sub_resource type="DynamicFont" id=3]
 size = 57
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 57
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 0 )
 
 [node name="cenaperdeu" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="animacao" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -184,7 +184,7 @@ custom_styles/normal = SubResource( 6 )
 text = "Sair"
 
 [node name="botaoSelecionado" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 1 )
 
 [connection signal="mouse_entered" from="animacao/fundoperdeu/botaoReiniciar" to="." method="_on_botaoReiniciar_mouse_entered"]
 [connection signal="pressed" from="animacao/fundoperdeu/botaoReiniciar" to="." method="_on_botaoReiniciar_pressed"]
