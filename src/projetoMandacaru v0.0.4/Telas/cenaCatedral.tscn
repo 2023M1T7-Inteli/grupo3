@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Imagens/sprite girl 1_0 grande.png" type="Texture" id=1]
+[ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesertTiles.png" type="Texture" id=2]
 [ext_resource path="res://Sons/passosSom.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Codigos/cenaCatedral.gd" type="Script" id=4]

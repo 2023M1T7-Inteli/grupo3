@@ -8,7 +8,8 @@ var mismutedIcon = preload("res://Imagens/speaker.png")
 
 
 func _ready():
-	$button1Anim.play("cenaInicial")
+	$bgAnim.play("bg")
+	$titleAnim.play("title")
 
 	
 func _process(delta):

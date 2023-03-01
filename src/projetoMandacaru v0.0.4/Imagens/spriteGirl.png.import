@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite girl 1_0 grande.png-788785605710a74e617278db86d297c2.stex"
+path="res://.import/spriteGirl.png-0979340ee5dc2cefb83718e879c31911.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/sprite girl 1_0 grande.png"
-dest_files=[ "res://.import/sprite girl 1_0 grande.png-788785605710a74e617278db86d297c2.stex" ]
+source_file="res://Imagens/spriteGirl.png"
+dest_files=[ "res://.import/spriteGirl.png-0979340ee5dc2cefb83718e879c31911.stex" ]
 
 [params]
 

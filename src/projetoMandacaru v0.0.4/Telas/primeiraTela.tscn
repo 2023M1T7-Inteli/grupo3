@@ -5,7 +5,7 @@
 [ext_resource path="res://Sons/passosSom.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Imagens/avatarBumba.png" type="Texture" id=4]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesertTiles.png" type="Texture" id=5]
-[ext_resource path="res://Imagens/sprite girl 1_0 grande.png" type="Texture" id=6]
+[ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=6]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesert_Assets/Props/Minifantasy_DesolateDesertProps.png" type="Texture" id=7]
 [ext_resource path="res://Codigos/primeiraTela.gd" type="Script" id=8]
 
