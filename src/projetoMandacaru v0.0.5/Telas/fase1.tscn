@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesert_Assets/Props/Minifantasy_DesolateDesertProps.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesertTiles.png" type="Texture" id=2]
 [ext_resource path="res://Telas/personagemCena.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Telas/testeTransição.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Codigos/fase1.gd" type="Script" id=5]
 [ext_resource path="res://Telas/interface.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
@@ -568,6 +570,7 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 25/z_index = 0
 
 [node name="fase1" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="fundo" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -594,3 +597,5 @@ tile_data = PoolIntArray( 3, 13, 0, 6, 9, 0, 7, 20, 0, 8, 18, 0, 10, 3, 0, 12, 7
 
 [node name="personagemCena" parent="." instance=ExtResource( 3 )]
 position = Vector2( -74, -34 )
+
+[node name="transiçãoVento" parent="." instance=ExtResource( 4 )]

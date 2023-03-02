@@ -13,5 +13,5 @@ func _ready():
 #função que inicializa quando um corpo entra no alcance
 func _on_areaDeColisao_body_entered(body):
 	#busca a próxima cena e a sentencia
-	$mapa/corpoJogador.trocarcena()
+	$personagemCena/corpoJogador.trocarcena()
 
