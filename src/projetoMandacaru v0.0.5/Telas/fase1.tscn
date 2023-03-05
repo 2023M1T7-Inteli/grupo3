@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesert_Assets/Props/Minifantasy_DesolateDesertProps.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesertTiles.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Telas/testeTransição.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Codigos/fase1.gd" type="Script" id=5]
 [ext_resource path="res://Telas/interface.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Imagens/avatarBumba.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Minifantasy_DesolateDesertTiles.png 0"
@@ -569,6 +571,200 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 25/shapes = [  ]
 25/z_index = 0
 
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("caixaDeDialogo:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, 1200 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("spriteBoi:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -81, 459 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("textoDialogo:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("spriteBoi:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("caixaDeDialogo:color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.560784 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "cutscene"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 11 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 2, 9.7, 11 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("caixaDeDialogo:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.5, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8, 1200 ), Vector2( 8, 389 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spriteBoi:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.6, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -81, 459 ), Vector2( 80, 461 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("textoDialogo:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2.7, 9.4, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Olá, eu sou o Boi Bumbá...", "Olá, eu sou o Boi Bumbá...", "" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("spriteBoi:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 9.3, 9.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), null ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("caixaDeDialogo:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 9.3, 9.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.560784 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=23]
+size = 39
+font_data = ExtResource( 8 )
+
+[sub_resource type="Theme" id=26]
+default_font = SubResource( 23 )
+
 [node name="fase1" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -599,3 +795,32 @@ tile_data = PoolIntArray( 3, 13, 0, 6, 9, 0, 7, 20, 0, 8, 18, 0, 10, 3, 0, 12, 7
 position = Vector2( -74, -34 )
 
 [node name="transiçãoVento" parent="." instance=ExtResource( 4 )]
+
+[node name="cutscene" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 24 )
+anims/cutscene = SubResource( 25 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="caixaDeDialogo" type="ColorRect" parent="."]
+margin_left = 8.0
+margin_top = 1200.0
+margin_right = 953.0
+margin_bottom = 1343.0
+color = Color( 0, 0, 0, 0.560784 )
+
+[node name="spriteBoi" type="Sprite" parent="."]
+position = Vector2( -81, 459 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 7 )
+
+[node name="textoDialogo" type="Label" parent="."]
+margin_left = 157.0
+margin_top = 403.0
+margin_right = 938.0
+margin_bottom = 520.0
+theme = SubResource( 26 )
+
+[connection signal="animation_finished" from="cutscene" to="." method="_on_cutscene_animation_finished"]

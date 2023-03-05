@@ -617,12 +617,12 @@ tracks/6/keys = {
 "values": [ Color( 0, 0, 0, 0.560784 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=25]
 size = 39
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=24]
-default_font = SubResource( 23 )
+default_font = SubResource( 25 )
 
 [node name="telaPrincipal" type="Node2D"]
 script = ExtResource( 8 )

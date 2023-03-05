@@ -21,6 +21,7 @@ var comecou = false
 var perdeu = false
 
 #função que inicia, simulando os valores de física do jogo
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	#condição que inicia se a variável global \"iniciou\" for verdadeira
 	if Global.iniciou:
@@ -101,11 +102,13 @@ func _physics_process(delta):
 		Global.iniciou = true
 		
 	#instancia a funcção interna \"move_and_slide\", que simula a movimentação levando como parâmetro a variável \"movimento\"
+# warning-ignore:return_value_discarded
 	move_and_slide(movimento)
 	
 #função que, quando instanciada, troca a cena atual
 func trocarcena():
 	#abre uma árvore de cenas, mudando para a cena \"cenaCatedral\"
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(\"res://Telas/cenaCatedral.tscn\")
 	
 #função que, quando instanciada, adiciona uma cena flutuante que simula o Game Over

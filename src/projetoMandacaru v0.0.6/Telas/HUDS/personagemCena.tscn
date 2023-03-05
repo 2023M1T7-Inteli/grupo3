@@ -1,0 +1,196 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sons/passosSom.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=2]
+[ext_resource path="res://Sons/somperdeu.mp3" type="AudioStream" id=3]
+
+[sub_resource type="GDScript" id=21]
+script/source = "extends KinematicBody2D
+
+#armazena o valores do \"Vector2\"
+var movimento = Vector2.ZERO
+#define um temporizador inicial
+var temporizador = 0
+#variável booleana que confere se o tempo foi atingido
+var deuTempo = false
+#contador que referencia a posição acessada da array de movimentos
+var contador = 0
+#boleana que armazena o valor verdadeiro para \"começou\" e falso para \"não começou\"
+var comecou = false
+#variável booleana que confere se o jogador perdeu
+var perdeu = false
+
+#função que inicia, simulando os valores de física do jogo
+# warning-ignore:unused_argument
+func _physics_process(delta):
+	#condição que inicia se a variável global \"iniciou\" for verdadeira
+	if Global.iniciou:
+		#torna a variável \"começou\" verdadeira
+		comecou = true
+		#condição que inicia se a variável \"contador\" for maior ou igual à variável global \"iniciou\"
+		if contador >= Global.lista.size():
+			#inicia o som \"somPerdeu\"
+			$somPerdeu.play()
+			#inicia a função \"adicionarcenaperdeu\" que traz a cena de Game Over
+			adicionarcenaperdeu()
+			#torna a variável \"perdeu\" verdadeira
+			perdeu = true
+		#inicia se a condição acima não for satisfeita
+		else:
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"esquerda\"
+			if Global.lista[contador] == \"esquerda\":
+				#adiciona o valor -200 ao vetor x da variável \"movimento\"
+				movimento.x = -200
+				#inicia a animação \"Direita\", que simula a moviemtação para a direita
+				$animacaoPersonagem.play(\"Direita\")
+				#inverte horizontalmente a animação, para simular uma movimentação para a esquerda
+				$animacaoPersonagem.flip_h = true
+				#inicia o som \"somPassos\"
+				$somPassos.play()
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"direita\"
+			elif Global.lista[contador] == \"direita\":
+				#adiciona o valor 200 ao vetor x da variável \"movimento\"
+				movimento.x = 200
+				#inicia a animação \"Direita\", que simula a moviemtação para a direita
+				$animacaoPersonagem.play(\"Direita\")
+				#inicia o som \"somPassos\"
+				$somPassos.play()
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"cima\"
+			elif Global.lista[contador] == \"cima\":
+				#adiciona o valor -200 ao vetor y da variável \"movimento\"
+				movimento.y = -200
+				#inicia a animação \"Sobe\", que simula a moviemtação para cima
+				$animacaoPersonagem.play(\"Sobe\")
+				#inicia o som \"somPassos\"
+				$somPassos.play()
+			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"baixo\"
+			elif Global.lista[contador] == \"baixo\":
+				#adiciona o valor 200 ao vetor y da variável \"movimento\"
+				movimento.y = 200
+				#inicia a animação \"Desce\", que simula a moviemtação para baixo
+				$animacaoPersonagem.play(\"Desce\")
+				#inicia o som \"somPassos\"
+				$somPassos.play()
+		#Torna a variável global \"iniciou\" falsa
+		Global.iniciou = false
+		
+	#condição que inicia se a variável \"perdeu\" for verdadeira
+	if perdeu:
+		#torna a variável \"começou\" falsa
+		comecou = false
+		#reinicia a variável \"temporizador\" para 0
+		temporizador = 0
+		
+	#condição que inicia se a variável \"começou\" for verdadeira
+	if comecou:
+		#adiciona o valor 1 ao temporizador
+		temporizador += 1
+		
+	#condição que inicia se a variável \"temporizador\" for maior ou igual à 180
+	if temporizador >= 180:
+		#torna a variável \"começou\" falsa
+		comecou = false
+		#reinicia o vetor x da variável \"movimento\" para 0
+		movimento.x = 0
+		#reinicia o vetor x da variável \"movimento\" para 0
+		movimento.y = 0
+		#reinicia a variável \"temporizador\" para 0
+		temporizador = 0
+		#adicona o valor 1 à variável \"contador\"
+		contador += 1
+		#Torna a variável global \"iniciou\" verdadeira
+		Global.iniciou = true
+		
+	#instancia a funcção interna \"move_and_slide\", que simula a movimentação levando como parâmetro a variável \"movimento\"
+# warning-ignore:return_value_discarded
+	move_and_slide(movimento)
+	
+#função que, quando instanciada, troca a cena atual
+func trocarcena():
+	#abre uma árvore de cenas, mudando para a cena \"cenaCatedral\"
+# warning-ignore:return_value_discarded
+	get_tree().change_scene(\"res://Telas/cenaCatedral.tscn\")
+	
+#função que, quando instanciada, adiciona uma cena flutuante que simula o Game Over
+func adicionarcenaperdeu():
+	#variável que armazena um pré-carregamento da cena \"cenaperdeu\"
+	var preloadcenaperdeu = preload(\"res://Telas/HUDS/cenaPerdeu.tscn\").instance()
+	#adiciona uma cena filha com o valor de \"preloadcenaperdeu\"
+	get_tree().current_scene.add_child(preloadcenaperdeu)
+"
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 23.75, 29 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 400, 0, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 800, 0, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1184, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 400, 1184, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 592, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 400, 592, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 800, 592, 400, 592 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Desce",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "Direita",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Sobe",
+"speed": 5.0
+} ]
+
+[node name="personagemCena" type="Node2D"]
+
+[node name="corpoJogador" type="KinematicBody2D" parent="."]
+script = SubResource( 21 )
+
+[node name="corpodeColisao" type="CollisionShape2D" parent="corpoJogador"]
+position = Vector2( 106, 128 )
+shape = SubResource( 22 )
+
+[node name="animacaoPersonagem" type="AnimatedSprite" parent="corpoJogador"]
+position = Vector2( 107, 129 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 23 )
+animation = "Desce"
+
+[node name="somPerdeu" type="AudioStreamPlayer2D" parent="corpoJogador"]
+stream = ExtResource( 3 )
+volume_db = -9.244
+
+[node name="somPassos" type="AudioStreamPlayer2D" parent="corpoJogador"]
+stream = ExtResource( 1 )
+volume_db = 6.992
