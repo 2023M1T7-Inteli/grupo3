@@ -7,18 +7,16 @@
 [sub_resource type="GDScript" id=21]
 script/source = "extends KinematicBody2D
 
-#armazena o valores do \"Vector2\"
-var movimento = Vector2.ZERO
-#define um temporizador inicial
-var temporizador = 0
-#variável booleana que confere se o tempo foi atingido
-var deuTempo = false
-#contador que referencia a posição acessada da array de movimentos
-var contador = 0
 #boleana que armazena o valor verdadeiro para \"começou\" e falso para \"não começou\"
 var comecou = false
 #variável booleana que confere se o jogador perdeu
 var perdeu = false
+#variavel que determina a velocidade do personagem
+var velocidade = 400
+#variavel Vector2 que determina o movimento total do personagem baseado na variavel velocidade
+var movimento = Vector2.ZERO
+#variavel que registra a direção atual do movimento do personagem
+var direcaoAtual
 
 func _process(delta):
 	if Input.is_action_pressed(\"ui_end\"):
@@ -26,54 +24,23 @@ func _process(delta):
 #função que inicia, simulando os valores de física do jogo
 # warning-ignore:unused_argument
 func _physics_process(delta):
+	#funcao que movimenta o personagem na cena e retorna se o personagem colidiu em algum objeto
+	var colidiu = move_and_collide(movimento * delta)
+	#controle da colisao do personagem
+	if colidiu:
+		#vetor que registra o quanto o personagem entrou em outro objeto
+		var vetorEmpurra = colidiu.normal * -colidiu.remainder
+		#reverte o quanto o personagem entrou em outro objeto
+		move_and_slide(vetorEmpurra)
+		#chama a funcao processarLista
+		processarLista()
+		
 	#condição que inicia se a variável global \"iniciou\" for verdadeira
 	if Global.iniciou:
 		#torna a variável \"começou\" verdadeira
 		comecou = true
-		#condição que inicia se a variável \"contador\" for maior ou igual à variável global \"iniciou\"
-		if contador >= Global.lista.size():
-			#inicia o som \"somPerdeu\"
-			$somPerdeu.play()
-			#inicia a função \"adicionarcenaperdeu\" que traz a cena de Game Over
-			adicionarcenaperdeu()
-			#torna a variável \"perdeu\" verdadeira
-			perdeu = true
-		#inicia se a condição acima não for satisfeita
-		else:
-			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"esquerda\"
-			if Global.lista[contador] == \"esquerda\":
-				#adiciona o valor -200 ao vetor x da variável \"movimento\"
-				movimento.x = -200
-				#inicia a animação \"Direita\", que simula a moviemtação para a direita
-				$animacaoPersonagem.play(\"Direita\")
-				#inverte horizontalmente a animação, para simular uma movimentação para a esquerda
-				$animacaoPersonagem.flip_h = true
-				#inicia o som \"somPassos\"
-				$somPassos.play()
-			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"direita\"
-			elif Global.lista[contador] == \"direita\":
-				#adiciona o valor 200 ao vetor x da variável \"movimento\"
-				movimento.x = 200
-				#inicia a animação \"Direita\", que simula a moviemtação para a direita
-				$animacaoPersonagem.play(\"Direita\")
-				#inicia o som \"somPassos\"
-				$somPassos.play()
-			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"cima\"
-			elif Global.lista[contador] == \"cima\":
-				#adiciona o valor -200 ao vetor y da variável \"movimento\"
-				movimento.y = -200
-				#inicia a animação \"Sobe\", que simula a moviemtação para cima
-				$animacaoPersonagem.play(\"Sobe\")
-				#inicia o som \"somPassos\"
-				$somPassos.play()
-			#condição que inicia se a posição \"contador\" da lista global for igual à variável \"baixo\"
-			elif Global.lista[contador] == \"baixo\":
-				#adiciona o valor 200 ao vetor y da variável \"movimento\"
-				movimento.y = 200
-				#inicia a animação \"Desce\", que simula a moviemtação para baixo
-				$animacaoPersonagem.play(\"Desce\")
-				#inicia o som \"somPassos\"
-				$somPassos.play()
+		#chama a funcao processarLista
+		processarLista()
 		#Torna a variável global \"iniciou\" falsa
 		Global.iniciou = false
 			
@@ -81,32 +48,6 @@ func _physics_process(delta):
 	if perdeu:
 		#torna a variável \"começou\" falsa
 		comecou = false
-		#reinicia a variável \"temporizador\" para 0
-		temporizador = 0
-		
-	#condição que inicia se a variável \"começou\" for verdadeira
-	if comecou:
-		#adiciona o valor 1 ao temporizador
-		temporizador += 1
-		
-	#condição que inicia se a variável \"temporizador\" for maior ou igual à 180
-	if temporizador >= 180:
-		#torna a variável \"começou\" falsa
-		comecou = false
-		#reinicia o vetor x da variável \"movimento\" para 0
-		movimento.x = 0
-		#reinicia o vetor x da variável \"movimento\" para 0
-		movimento.y = 0
-		#reinicia a variável \"temporizador\" para 0
-		temporizador = 0
-		#adicona o valor 1 à variável \"contador\"
-		contador += 1
-		#Torna a variável global \"iniciou\" verdadeira
-		Global.iniciou = true
-		
-	#instancia a funcção interna \"move_and_slide\", que simula a movimentação levando como parâmetro a variável \"movimento\"
-# warning-ignore:return_value_discarded
-	move_and_slide(movimento)
 	
 #função que, quando instanciada, troca a cena atual
 func trocarcena():
@@ -124,10 +65,59 @@ func adicionarcenaperdeu():
 func adicionarcenapause():
 	var preloadcenapause = preload(\"res://Telas/HUDS/pause.tscn\").instance()
 	get_tree().current_scene.add_child(preloadcenapause)
+
+#faz o controle das informacoes de movimento contidas na lista global
+func processarLista():
+	#checa se ainda há posicoes na lista global
+	if Global.lista.size()>0:
+		#atualiza a variavel direcaoAtual
+		direcaoAtual = Global.lista.pop_front()
+	#inicia a tela de derrota no caso de a lista estar vazia
+	else:	
+		#inicia o som \"somPerdeu\"
+		$somPerdeu.play()
+		#inicia a função \"adicionarcenaperdeu\" que traz a cena de Game Over
+		adicionarcenaperdeu()
+		#torna a variável \"perdeu\" verdadeira
+		perdeu = true
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"esquerda\"
+	if direcaoAtual == \"esquerda\":
+		#adiciona o valor -200 ao vetor x da variável \"movimento\"
+		movimento = Vector2(-velocidade, 0)
+		#inicia a animação \"Direita\", que simula a moviemtação para a direita
+		$animacaoPersonagem.play(\"Direita\")
+		#inverte horizontalmente a animação, para simular uma movimentação para a esquerda
+		$animacaoPersonagem.flip_h = true
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"direita\"
+	elif direcaoAtual == \"direita\":
+		#adiciona o valor 200 ao vetor x da variável \"movimento\"
+		movimento = Vector2(velocidade, 0)
+		#inicia a animação \"Direita\", que simula a moviemtação para a direita
+		$animacaoPersonagem.play(\"Direita\")
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"cima\"
+	elif direcaoAtual == \"cima\":
+		#adiciona o valor -200 ao vetor y da variável \"movimento\"
+		movimento = Vector2(0, -velocidade)
+		#inicia a animação \"Sobe\", que simula a moviemtação para cima
+		$animacaoPersonagem.play(\"Sobe\")
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"baixo\"
+	elif direcaoAtual == \"baixo\":
+		#adiciona o valor 200 ao vetor y da variável \"movimento\"
+		movimento = Vector2(0, velocidade)
+		#inicia a animação \"Desce\", que simula a moviemtação para baixo
+		$animacaoPersonagem.play(\"Desce\")
+		#inicia o som \"somPassos\"
+		$somPassos.play()
 "
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 23.75, 29 )
+extents = Vector2( 19.5, 27.5 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
@@ -185,7 +175,7 @@ animations = [ {
 script = SubResource( 21 )
 
 [node name="corpodeColisao" type="CollisionShape2D" parent="corpoJogador"]
-position = Vector2( 106, 128 )
+position = Vector2( 106.5, 129.5 )
 shape = SubResource( 22 )
 
 [node name="animacaoPersonagem" type="AnimatedSprite" parent="corpoJogador"]
