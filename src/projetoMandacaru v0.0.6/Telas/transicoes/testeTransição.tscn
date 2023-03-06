@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Imagens/arSprite.png" type="Texture" id=2]
-[ext_resource path="res://Codigos/testeTransição.gd" type="Script" id=3]
+[ext_resource path="res://Codigos/transições/testeTransição.gd" type="Script" id=3]
 [ext_resource path="res://Imagens/canionsDourados.jpeg" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]

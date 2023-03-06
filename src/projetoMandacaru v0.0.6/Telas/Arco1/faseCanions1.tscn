@@ -600,6 +600,7 @@ visible = false
 [node name="personagemCena" parent="." instance=ExtResource( 5 )]
 position = Vector2( -74, -34 )
 
-[node name="transicaoVento" parent="." instance=ExtResource( 4 )]
-
 [node name="tutorialCena" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="transicaoVento" parent="." instance=ExtResource( 4 )]

@@ -20,6 +20,9 @@ var comecou = false
 #variável booleana que confere se o jogador perdeu
 var perdeu = false
 
+func _process(delta):
+	if Input.is_action_pressed(\"ui_end\"):
+		adicionarcenapause()
 #função que inicia, simulando os valores de física do jogo
 # warning-ignore:unused_argument
 func _physics_process(delta):
@@ -73,7 +76,7 @@ func _physics_process(delta):
 				$somPassos.play()
 		#Torna a variável global \"iniciou\" falsa
 		Global.iniciou = false
-		
+			
 	#condição que inicia se a variável \"perdeu\" for verdadeira
 	if perdeu:
 		#torna a variável \"começou\" falsa
@@ -117,6 +120,10 @@ func adicionarcenaperdeu():
 	var preloadcenaperdeu = preload(\"res://Telas/HUDS/cenaPerdeu.tscn\").instance()
 	#adiciona uma cena filha com o valor de \"preloadcenaperdeu\"
 	get_tree().current_scene.add_child(preloadcenaperdeu)
+	
+func adicionarcenapause():
+	var preloadcenapause = preload(\"res://Telas/HUDS/pause.tscn\").instance()
+	get_tree().current_scene.add_child(preloadcenapause)
 "
 
 [sub_resource type="RectangleShape2D" id=22]
