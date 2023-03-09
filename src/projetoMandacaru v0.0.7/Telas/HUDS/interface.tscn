@@ -112,8 +112,15 @@ custom_styles/normal = SubResource( 9 )
 icon = ExtResource( 1 )
 icon_align = 1
 
+[node name="botaoDelete" type="Button" parent="."]
+margin_left = 1138.0
+margin_top = 843.0
+margin_right = 1347.0
+margin_bottom = 1050.0
+
 [connection signal="pressed" from="botaoEsquerda" to="." method="_on_botaoEsquerda_pressed"]
 [connection signal="pressed" from="botaoDireita" to="." method="_on_botaoDireita_pressed"]
 [connection signal="pressed" from="botaoCima" to="." method="_on_botaoCima_pressed"]
 [connection signal="pressed" from="botaoBaixo" to="." method="_on_botaoBaixo_pressed"]
 [connection signal="pressed" from="botaoIniciar" to="." method="_on_botaoIniciar_pressed"]
+[connection signal="pressed" from="botaoDelete" to="." method="_on_botaoDelete_pressed"]

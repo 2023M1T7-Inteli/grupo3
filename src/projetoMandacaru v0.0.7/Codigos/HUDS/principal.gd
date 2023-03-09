@@ -33,3 +33,9 @@ func _on_botaoIniciar_pressed():
 	Global.iniciou = true
 	#transfoma a variável "botaoIniciarPressionado" em verdadeira
 	botaoIniciarPressionado = true
+
+#função que inicia quando o botão "botaoDelete" é pressionado
+func _on_botaoDelete_pressed():
+	if botaoIniciarPressionado == false:
+			#deleta o ultimo valor da lista global
+			Global.lista.pop_back()
