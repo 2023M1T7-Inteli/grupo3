@@ -61,28 +61,28 @@ tracks/0/keys = {
 "values": [ true, true, false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("animacaoPersonagem:position")
+tracks/1/path = NodePath("animacaoPersonagem:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -176, 861 ), Vector2( 827, 877 ) ]
+"times": PoolRealArray( 0, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Direita", "Direita", "Desce" ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("animacaoPersonagem:animation")
+tracks/2/path = NodePath("animacaoPersonagem:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.1, 2.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ "Direita", "Direita", "Desce" ]
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -205, 933 ), Vector2( 956, 930 ) ]
 }
 
 [sub_resource type="AtlasTexture" id=9]
@@ -165,7 +165,7 @@ anims/chegada = SubResource( 22 )
 
 [node name="animacaoPersonagem" type="AnimatedSprite" parent="."]
 position = Vector2( -176, 861 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 23 )
 animation = "Direita"
 playing = true

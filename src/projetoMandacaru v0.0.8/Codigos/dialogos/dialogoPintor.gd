@@ -5,7 +5,7 @@ var contador = 0
 #variável que verifica se o tutorial terminou
 var terminouTutorial = false
 #variável que armazena os textos que vão aparecer no diálogo
-var dialogo = ["Olá, tudo bem?", ""]
+var dialogo = ["Olá, tudo bem?\n Você poderia me ajudar a contar quantas latas de tinta eu tenho na estante?", ""]
 
 #função que roda a cada atualização da tela
 func _process(delta):
