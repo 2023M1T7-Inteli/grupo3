@@ -603,8 +603,8 @@ visible = false
 
 [node name="transicaoVento" parent="." instance=ExtResource( 4 )]
 
-[node name="Interface" parent="." instance=ExtResource( 6 )]
+[node name="tutorialInicio" parent="." instance=ExtResource( 7 )]
 visible = false
 
-[node name="tutorialInicio" parent="." instance=ExtResource( 7 )]
+[node name="Interface" parent="." instance=ExtResource( 6 )]
 visible = false
