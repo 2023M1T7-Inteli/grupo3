@@ -7,12 +7,6 @@ func _ready():
 	
 #função que roda junto à atualização de frames
 func _process(delta):
-	#condição ativada quando a posição x do personagem excede 1920 pixels
-	if $personagemCena/corpoJogador.position.x >= 1920:
-		#cria uma árvore de cenas que muda para a fase 4 dos cânions
-		get_tree().change_scene("res://Telas/Arco1/faseCanions4.tscn")
-		#reinicia a lista global
-		Global.lista = []
 		
 	#condição ativada quando a variável "terminou" da cena "transiçãoVento" é verdadeira
 	if $transicaoVento.terminou:
@@ -34,3 +28,10 @@ func _process(delta):
 	if $tutorialInicio.terminouTutorialInicial:
 		#torna a cena "tutorialCena" visível
 		$tutorialInicio.visible = false
+
+
+func _on_Area2D_body_entered(body):
+	#cria uma árvore de cenas que muda para a fase 4 dos cânions
+		get_tree().change_scene("res://Telas/Arco1/faseCanions2.tscn")
+		#reinicia a lista global
+		Global.lista = []
