@@ -54,7 +54,7 @@ func _physics_process(delta):
 		#torna a variável \"começou\" falsa
 		comecou = false
 	
-#função que, quando instanciada, torna visivel a cena que simula o Game Over
+#função que torna visivel a cena que simula o Game Over
 func adicionarcenaperdeu():
 	#torna visivel a cena que simula o Game Over
 	$cenaperdeu.visible = true
