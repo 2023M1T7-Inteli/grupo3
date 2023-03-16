@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sombotaopressionado.mp3-46e49aead8f684d5da1db2e6d344b2fd.mp3str"
+
+[deps]
+
+source_file="res://Sons/sombotaopressionado.mp3"
+dest_files=[ "res://.import/sombotaopressionado.mp3-46e49aead8f684d5da1db2e6d344b2fd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/passosSom.mp3-e4fb85fbbb398bc52b639b096c8da0b7.mp3str"
+
+[deps]
+
+source_file="res://Sons/passosSom.mp3"
+dest_files=[ "res://.import/passosSom.mp3-e4fb85fbbb398bc52b639b096c8da0b7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
