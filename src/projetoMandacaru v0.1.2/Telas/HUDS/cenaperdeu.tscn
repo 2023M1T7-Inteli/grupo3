@@ -123,6 +123,7 @@ font_data = ExtResource( 3 )
 bg_color = Color( 0, 0, 0, 0 )
 
 [node name="cenaperdeu" type="Node2D"]
+visible = false
 script = ExtResource( 2 )
 
 [node name="animacao" type="AnimationPlayer" parent="."]
@@ -130,19 +131,21 @@ anims/RESET = SubResource( 1 )
 anims/transicaoperdeu = SubResource( 2 )
 
 [node name="fundo" type="ColorRect" parent="animacao"]
+visible = false
 margin_right = 1920.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 0 )
 
 [node name="fundoperdeu" type="ColorRect" parent="animacao"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 711.0
-margin_top = 356.5
-margin_right = 1209.0
-margin_bottom = 723.5
+margin_left = -249.0
+margin_top = -183.5
+margin_right = 249.0
+margin_bottom = 183.5
 color = Color( 0, 0, 0, 0.133333 )
 
 [node name="botaoReiniciar" type="Button" parent="animacao/fundoperdeu"]

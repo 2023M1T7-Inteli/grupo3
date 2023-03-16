@@ -1,14 +1,21 @@
 extends Node2D
 
-#função que inicializa a cena
-func _ready():
-	#inicia uma "animationTree" que possui uma animação de cena
-	$animacao.play("transicaoperdeu")
-	
+#variavel utilizada no controle da cena
+var controle = false
+
+#função que faz a transicao da cena acontecer
+func _process(delta):
+	if $".".visible==true && controle == false:
+		#inicia uma "animationTree" que possui uma animação de cena
+		$animacao.play("transicaoperdeu")
+		controle = true
+		
 #função que inicia quando o botão "botaoReiniciar" for pressionado
 func _on_botaoReiniciar_pressed():
-	#limpa a fila de cenas abertas
-	get_tree().current_scene.queue_free()
+	#torna a cenaperdeu invisivel
+	$".".visible= false
+	$animacao/fundoperdeu.visible=false
+	$animacao/fundo.visible=false
 	#reinicia a lista de movimento do jogador
 	Global.lista = []
 	#inicia novamente a cena principal

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sons/passosSom.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=2]
 [ext_resource path="res://Sons/somperdeu.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Telas/HUDS/cenaperdeu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=21]
 script/source = "extends KinematicBody2D
@@ -53,17 +54,13 @@ func _physics_process(delta):
 		#torna a variável \"começou\" falsa
 		comecou = false
 	
-#função que, quando instanciada, adiciona uma cena flutuante que simula o Game Over
+#função que, quando instanciada, torna visivel a cena que simula o Game Over
 func adicionarcenaperdeu():
-	#variável que armazena um pré-carregamento da cena \"cenaperdeu\"
-	var preloadcenaperdeu = preload(\"res://Telas/HUDS/cenaPerdeu.tscn\").instance()
-	#adiciona uma cena filha com o valor de \"preloadcenaperdeu\"
-	get_tree().current_scene.add_child(preloadcenaperdeu)
+	#torna visivel a cena que simula o Game Over
+	$cenaperdeu.visible = true
+	$cenaperdeu/animacao/fundoperdeu.visible = true
+	$cenaperdeu/animacao/fundo.visible = true
 	
-func adicionarcenapause():
-	var preloadcenapause = preload(\"res://Telas/HUDS/pause.tscn\").instance()
-	get_tree().current_scene.add_child(preloadcenapause)
-
 #faz o controle das informacoes de movimento contidas na lista global
 func processarLista():
 	#checa se ainda há posicoes na lista global
@@ -213,3 +210,5 @@ anims/Desce = SubResource( 25 )
 anims/Direita = SubResource( 23 )
 anims/RESET = SubResource( 24 )
 anims/Sobe = SubResource( 26 )
+
+[node name="cenaperdeu" parent="corpoJogador" instance=ExtResource( 4 )]
