@@ -5,14 +5,14 @@ var contador = 0
 #variável que verifica se o tutorial terminou
 var terminouTutorial = false
 #variável que armazena os textos que vão aparecer no diálogo
-var dialogo = ["Olá, eu sou o Boi Bumbá! Vejo que está procurando chegar às margens do Rio Sâo Francisco para encontrar o pintor. Posso te dar algumas instruçôes para chegar lá em segurança.","Olá, Boi Bumbá! Sim, por favor! Estou ansioso para chegar até lá e conversar com o pintor.", "Bem, o caminho até o Rio Sâo Francisco é longo e cheio de perigos. As íngremes ladeiras dos Cânions Dourados e Olho d'água do Casado sâo particularmente desafiadoras. Mas nâo se preocupe, eu posso te ajudar.", "Agradeço muito, Boi Bumbá. O que devo fazer para chegar lá?", "Primeiro, você deve listar todos os seus passos com as setas abaixo, logo depois iniciar seu movimento para seguir a jornada.", "Ok, estou preparado. E depois?","Depois, você deve seguir as trilhas bem marcadas pelas montanhas. Tenha cuidado ao caminhar nas íngremes ladeiras e nas encostas.",  "Certo, vou prestar atençâo.", "Por fim, quando chegar às margens do Rio Sâo Francisco, você terá que convencer  o pintor a lhe entregar a pintura para o festival, certifique-se que será bem educado.", "Ok, estou pronto para enfrentar os desafios. Obrigado pelas dicas, Boi Bumbá.", "Boa sorte em sua jornada, viajante! E lembre-se: a jornada é tão importante quanto o destino. Aproveite cada momento desta experiência única e inesquecível.", ""]
+var dialogo = ["Ola! Muito prazer! Eu sou o Boi Bumba!","Preciso da sua ajuda para organizar meu festival aqui em Alagoas.", "Sua missao é recuperar os itens que foram perdidos por Alagoas e chegar ao final do mapa para realizar o festival 'Bumba Meu Boi'", "Ao final de cada fase concluida, voce conquistara um dos meus 5 itens perdidos. Boa Sorte!", "" ]
 	
 #função que inicia quando a cena começa 
 func _ready():
 	#torna a sprite "spriteBoi" visível
 	$spriteBoi.visible = true
 	#torna a sprite "spritePersonagem" invisível
-	$spritePersonagem.visible = false
+
 	
 #função que roda a cada atualização da tela
 func _process(delta):
@@ -29,18 +29,8 @@ func _on_botaoPassar_pressed():
 	#adiciona o valor 1 ao contador
 	contador += 1
 	#função que roda quando a sprite "spriteBoi" for visível
-	if $spriteBoi.visible:
-		#torna a sprite "spriteBoi" invisível
-		$spriteBoi.visible = false
-		#torna a sprite "spritePersonagem" visível
-		$spritePersonagem.visible = true
-	#função que roda quando a sprite "spritePersonagem" estiver visível
-	elif $spritePersonagem.visible:
-		#torna a sprite "spriteBoi" visível
-		$spriteBoi.visible = true
-		#torna a sprite "spritePersonagem" invisível
-		$spritePersonagem.visible = false
-	#condição que ativa qunado o contador excede 11
-	if contador >= 11:
+	
+	#condição que ativa quado o contador excede 6
+	if contador >= 4:
 		#torna a variável "terminouTutorial" verdadeira
 		terminouTutorial = true

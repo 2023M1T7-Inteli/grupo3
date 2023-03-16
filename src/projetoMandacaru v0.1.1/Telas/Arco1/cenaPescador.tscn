@@ -163,4 +163,5 @@ position = Vector2( -176, 861 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 23 )
 animation = "Direita"
+frame = 1
 playing = true
