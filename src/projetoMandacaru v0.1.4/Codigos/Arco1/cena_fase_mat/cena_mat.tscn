@@ -1,0 +1,245 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Codigos/Arco1/cena_fase_mat/cena_mat.gd" type="Script" id=1]
+[ext_resource path="res://Imagens/pintorPixel.png" type="Texture" id=2]
+[ext_resource path="res://Imagens/cena_casa_pintor.jpg" type="Texture" id=3]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Imagens/numericKeyboard.png" type="Texture" id=5]
+[ext_resource path="res://Imagens/delet.png" type="Texture" id=6]
+[ext_resource path="res://Imagens/quadro_canions.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 44
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 18
+border_width_top = 18
+border_width_right = 18
+border_width_bottom = 18
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 18
+border_width_top = 18
+border_width_right = 18
+border_width_bottom = 18
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 18
+border_width_top = 18
+border_width_right = 18
+border_width_bottom = 18
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="fundo" type="TextureRect" parent="."]
+margin_left = -4.0
+margin_top = -11.0
+margin_right = 1925.0
+margin_bottom = 1088.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="pelicula1" type="ColorRect" parent="."]
+margin_left = -8.0
+margin_top = -26.0
+margin_right = 1241.0
+margin_bottom = 1133.0
+color = Color( 0, 0, 0, 0.411765 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="pelicula2" type="ColorRect" parent="pelicula1"]
+margin_left = 1816.0
+margin_top = 26.0
+margin_right = 1942.0
+margin_bottom = 1146.0
+rect_pivot_offset = Vector2( -1573, 148 )
+color = Color( 0, 0, 0, 0.411765 )
+
+[node name="caixaDialogo" type="Label" parent="."]
+margin_left = 38.0
+margin_top = 109.0
+margin_right = 1189.0
+margin_bottom = 312.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PintorPixel" type="Sprite" parent="."]
+position = Vector2( 961, 832 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+
+[node name="NumericKeyboard" type="Sprite" parent="."]
+position = Vector2( 565, 754 )
+scale = Vector2( 0.732143, 0.732143 )
+texture = ExtResource( 5 )
+
+[node name="Button0" type="Button" parent="NumericKeyboard"]
+modulate = Color( 0, 0, 0, 0 )
+margin_left = -262.0
+margin_top = -396.0
+margin_right = -104.0
+margin_bottom = -202.0
+
+[node name="Button1" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -81.0
+margin_top = -389.0
+margin_right = 88.0
+margin_bottom = -206.0
+
+[node name="Button2" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 93.0
+margin_top = -395.0
+margin_right = 262.0
+margin_bottom = -205.0
+
+[node name="Button3" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -261.0
+margin_top = -194.0
+margin_right = -100.0
+margin_bottom = -6.0
+
+[node name="Button4" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_top = -195.0
+margin_right = 81.0
+margin_bottom = -11.0
+
+[node name="Button5" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 94.0
+margin_top = -201.0
+margin_right = 272.0
+margin_bottom = -14.0
+
+[node name="Button6" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -265.0
+margin_top = 3.0
+margin_right = -96.0
+margin_bottom = 198.0
+
+[node name="Button7" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -87.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 186.0
+
+[node name="Button8" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 93.0
+margin_top = 5.0
+margin_right = 257.0
+margin_bottom = 192.0
+
+[node name="Button9" type="Button" parent="NumericKeyboard"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_top = 206.0
+margin_right = 82.0
+margin_bottom = 393.0
+
+[node name="Resposta" type="Label" parent="."]
+margin_left = 90.0
+margin_top = 327.0
+margin_right = 858.0
+margin_bottom = 437.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+valign = 1
+
+[node name="Delet" type="Sprite" parent="."]
+position = Vector2( 797, 382 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="deletBtn" type="Button" parent="Delet"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -58.0
+margin_top = -44.0
+margin_right = 52.0
+margin_bottom = 64.0
+
+[node name="enviar" type="Label" parent="."]
+margin_left = 879.0
+margin_top = 328.0
+margin_right = 1145.0
+margin_bottom = 437.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "ENVIAR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="enviarBtn" type="Button" parent="enviar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 100.0
+
+[node name="pelicula2" type="ColorRect" parent="."]
+visible = false
+margin_left = 1241.0
+margin_top = -20.0
+margin_right = 1807.0
+margin_bottom = 1100.0
+rect_pivot_offset = Vector2( -1573, 148 )
+color = Color( 0, 0, 0, 0.411765 )
+
+[node name="botaoPassar" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -70.0
+margin_right = 1922.0
+margin_bottom = 1080.0
+
+[node name="quadroCanions" type="Sprite" parent="."]
+visible = false
+position = Vector2( 538, 633 )
+scale = Vector2( 1.13128, 0.846392 )
+texture = ExtResource( 7 )
+
+[connection signal="pressed" from="NumericKeyboard/Button0" to="." method="_on_Button0_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="NumericKeyboard/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="Delet/deletBtn" to="." method="_on_deletBtn_pressed"]
+[connection signal="pressed" from="enviar/enviarBtn" to="." method="_on_enviarBtn_pressed"]
+[connection signal="pressed" from="botaoPassar" to="." method="_on_botaoPassar_pressed"]
