@@ -219,6 +219,7 @@ rect_pivot_offset = Vector2( -1573, 148 )
 color = Color( 0, 0, 0, 0.411765 )
 
 [node name="botaoPassar" type="Button" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -70.0
 margin_right = 1922.0

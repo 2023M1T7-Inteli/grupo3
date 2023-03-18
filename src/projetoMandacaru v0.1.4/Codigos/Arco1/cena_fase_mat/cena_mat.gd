@@ -5,7 +5,7 @@ var contador = 0
 #variável que verifica se o tutorial terminou
 var terminouTutorial = false
 #variável que armazena os textos que vão aparecer no diálogo
-var dialogo = ["Pintor: Aqui estão minhas tintas. Para o controle de gastos eu costumo anotar as quantidades de latas de tintas que eu possuo.", "Pintor: Quantas latas roxas e verdes eu possuo?", "Pintor: Quantos potes de tinta tem na minha estante?", "Pintor: Considerando todas as latas, caso eu utilize 6 delas, quantas sobram?", "Pintor: Quantas latas de tinta amarela, verde e azul claro existem na estante?", "Pintor: Minha amiga pediu 3 latas de tinta rosa, 1 lata de tinta laranja e 2 latas de tinta verde. Quantas latas sobrarão?", "Pintor: Quantas latas de tinta existem em cada prateleira?", "Pintor: Se na minha prateleira tem 18 potes de tintas, quantas tintas tem na metade dela?", "Pintor: Voce é muito bom em matemática, parabéns! Aqui está o quadro como prometido. Obrigado!"]
+var dialogo = ["Pintor: Eu guardo as minhas tintas aqui. Para controlar o estoque eu costumo anotar a quantidade de latas de tinta que eu tenho. Se tenho 3 latas verdes e 3 latas roxas, quantas latas verdes e roxas tenho no toal?", "Pintor: Quantos potes de tinta tem na minha estante? Note que a estante tem 6 prateleiras com 3 latas em cada", "Pintor: Considerando todas as latas que tenho, se eu gastar 4 latas de tinta marrom e 4 latas de tinta roxa, quantas latas sobram no total?", "Pintor: Ontem eu tinha 24 latas de tinta mas emprestei algumas para uma amiga minha e hoje tenho apenas 18. Quantas latas eu emprestei para a minha amiga?",  "Pintor: Se eu tenho 6 cores e decido criar uma nova cor misturando azul e marrom e outra nova cor misturando azul e verde, com quantas cores ficarei no total?", "Pintor: Voce é muito bom em matemática, parabéns! Aqui está o quadro como prometido. Obrigado!"]
 
 var resp = ""
 
@@ -15,7 +15,7 @@ func _process(_delta):
 	$caixaDialogo.text = dialogo[contador]
 	$Resposta.text = resp
 	
-	if contador == 8:
+	if contador == 5:
 		$pelicula2.visible = true
 		$quadroCanions.visible = true
 		$NumericKeyboard.visible = false
@@ -26,51 +26,38 @@ func _process(_delta):
 	
 #função ativada quando o botão "botaoPassar" for pressionado
 func _on_botaoPassar_pressed():
-	if contador == 8:
+	if contador == 5:
 		get_tree().change_scene("res://Telas/Arco2/faseMaceio.tscn")
-	else:
-		contador += 1
-		$botaoPassar.visible = false
-
-
+	
 func _on_enviarBtn_pressed():
-	if contador == 1 and $Resposta.text == "6":
+	if contador == 0 and $Resposta.text == "6":
 		contador += 1
 		resp = "Certa resposta!"
 		yield(get_tree().create_timer(1.5), "timeout")
 		resp = ""
-	elif contador == 2 and $Resposta.text == "18":
+	elif contador == 1 and $Resposta.text == "18":
 		contador += 1
 		resp = "Certa resposta!"
 		yield(get_tree().create_timer(1.5), "timeout")
 		resp = ""
-	elif contador == 3 and $Resposta.text == "12":
+	elif contador == 2 and $Resposta.text == "10":
 		contador += 1
 		resp = "Certa resposta!"
 		yield(get_tree().create_timer(1.5), "timeout")
 		resp = ""
-	elif contador == 4 and $Resposta.text == "9":
+	elif contador == 3 and $Resposta.text == "6":
 		contador += 1
 		resp = "Certa resposta!"
 		yield(get_tree().create_timer(1.5), "timeout")
 		resp = ""
-	elif contador == 5 and $Resposta.text == "12":
+	elif contador == 4 and $Resposta.text == "8":
 		contador += 1
 		resp = "Certa resposta!"
 		yield(get_tree().create_timer(1.5), "timeout")
 		resp = ""
-	elif contador == 6 and $Resposta.text == "3":
-		contador += 1
-		resp = "Certa resposta!"
-		yield(get_tree().create_timer(1.5), "timeout")
-		resp = ""
-	elif contador == 7 and $Resposta.text == "9":
-		contador += 1
-		resp = "Certa resposta!"
-		yield(get_tree().create_timer(1.5), "timeout")
-		resp = ""
+	
 	elif contador == 1 and $Resposta.text == "1115":
-		contador = 7
+		contador = 4
 	else:
 		resp = "Tente novamente!"
 		yield(get_tree().create_timer(1.5), "timeout")
