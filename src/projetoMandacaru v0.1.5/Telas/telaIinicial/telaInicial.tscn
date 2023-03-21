@@ -1,90 +1,23 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Imagens/speaker.png" type="Texture" id=1]
 [ext_resource path="res://Codigos/HUDS/telaInicial.gd" type="Script" id=2]
 [ext_resource path="res://Sons/Forro Brasil - Hermeto Pascoal (8 bits).WAV" type="AudioStream" id=3]
 [ext_resource path="res://Sons/sombotaopressionado.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Imagens/pixilart-drawing (1).png" type="Texture" id=6]
+[ext_resource path="res://Imagens/iniciar.png" type="Texture" id=7]
+[ext_resource path="res://Imagens/sair.png" type="Texture" id=8]
+[ext_resource path="res://Imagens/controles.png" type="Texture" id=9]
+[ext_resource path="res://Imagens/pixilart-drawing.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=11]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("titulo:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 37, 430 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("caixaBotoes:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 825, 567 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("fundo:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ) ]
-}
 
 [sub_resource type="Animation" id=13]
 resource_name = "title"
 length = 2.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("titulo:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 635, 237 ), Vector2( 635, 267 ), Vector2( 635, 237 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("caixaBotoes:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 825, 567 ), Vector2( 825, 588 ), Vector2( 825, 567 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("fundo:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0.439216, 0, 0, 1 ), Color( 0, 0.109804, 1, 0.65098 ), Color( 0.529412, 0, 0, 1 ) ]
-}
 
 [sub_resource type="DynamicFont" id=6]
 size = 60
@@ -95,11 +28,6 @@ default_font = SubResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 130
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -113,26 +41,23 @@ script = ExtResource( 2 )
 anims/RESET = SubResource( 11 )
 anims/title = SubResource( 13 )
 
-[node name="fundo" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+[node name="fundo" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 6 )
+expand = true
 
-[node name="caixaBotoes" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 825.0
-margin_top = 567.0
-margin_right = 1095.0
-margin_bottom = 727.0
-rect_pivot_offset = Vector2( 112.5, 71 )
-custom_constants/separation = 20
+[node name="Pixilart-drawing" type="Sprite" parent="."]
+position = Vector2( 965, 191 )
+scale = Vector2( 7.5, 8.5 )
+texture = ExtResource( 10 )
 
-[node name="botaoIniciar" type="Button" parent="caixaBotoes"]
-margin_right = 270.0
-margin_bottom = 40.0
+[node name="botaoIniciar" type="Button" parent="."]
+margin_left = 754.0
+margin_top = 378.0
+margin_right = 888.0
+margin_bottom = 446.0
+rect_scale = Vector2( 3, 3 )
 theme = SubResource( 2 )
 custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
@@ -141,27 +66,16 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
-text = "Iniciar"
-
-[node name="botaoControles" type="Button" parent="caixaBotoes"]
-margin_top = 60.0
-margin_right = 270.0
-margin_bottom = 100.0
-theme = SubResource( 2 )
-custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
-custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-text = "Controles"
+icon = ExtResource( 7 )
+flat = true
 icon_align = 1
+expand_icon = true
 
-[node name="botaoSair" type="Button" parent="caixaBotoes"]
-margin_top = 120.0
-margin_right = 270.0
-margin_bottom = 160.0
+[node name="botaoSair" type="Button" parent="."]
+margin_left = 760.0
+margin_top = 762.0
+margin_right = 1169.0
+margin_bottom = 965.0
 theme = SubResource( 2 )
 custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
@@ -170,36 +84,36 @@ custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
-text = "Sair"
+icon = ExtResource( 8 )
 icon_align = 1
+expand_icon = true
 
-[node name="titulo" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 37.0
-margin_top = 430.0
-margin_right = 687.0
-margin_bottom = 517.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 9
-custom_constants/line_spacing = 17
-custom_constants/shadow_offset_y = 4
-custom_fonts/font = SubResource( 9 )
-text = "BUMBA CODE"
+[node name="botaoControles" type="Button" parent="."]
+margin_left = 729.0
+margin_top = 568.0
+margin_right = 1184.0
+margin_bottom = 776.0
+theme = SubResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
 
 [node name="botaoSelecionado" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -15.255
 
 [node name="botaoSom" type="Button" parent="."]
-margin_left = 1810.0
-margin_top = 35.0
-margin_right = 1888.0
-margin_bottom = 115.0
+margin_left = 1785.0
+margin_top = 57.0
+margin_right = 1870.0
+margin_bottom = 137.0
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 10 )
 custom_styles/focus = SubResource( 10 )
@@ -213,11 +127,11 @@ expand_icon = true
 stream = ExtResource( 3 )
 autoplay = true
 
-[connection signal="mouse_entered" from="caixaBotoes/botaoIniciar" to="." method="_on_botaoIniciar_mouse_entered"]
-[connection signal="pressed" from="caixaBotoes/botaoIniciar" to="." method="_on_botaoIniciar_pressed"]
-[connection signal="mouse_entered" from="caixaBotoes/botaoControles" to="." method="_on_botaoControles_mouse_entered"]
-[connection signal="pressed" from="caixaBotoes/botaoControles" to="." method="_on_botaoControles_pressed"]
-[connection signal="mouse_entered" from="caixaBotoes/botaoSair" to="." method="_on_botaoSair_mouse_entered"]
-[connection signal="pressed" from="caixaBotoes/botaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="mouse_entered" from="botaoIniciar" to="." method="_on_botaoIniciar_mouse_entered"]
+[connection signal="pressed" from="botaoIniciar" to="." method="_on_botaoIniciar_pressed"]
+[connection signal="mouse_entered" from="botaoSair" to="." method="_on_botaoSair_mouse_entered"]
+[connection signal="pressed" from="botaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="mouse_entered" from="botaoControles" to="." method="_on_botaoControles_mouse_entered"]
+[connection signal="pressed" from="botaoControles" to="." method="_on_botaoControles_pressed"]
 [connection signal="pressed" from="botaoSom" to="." method="_on_botaoSom_pressed"]
 [connection signal="finished" from="musicaFundo" to="." method="_on_musicaFundo_finished"]
