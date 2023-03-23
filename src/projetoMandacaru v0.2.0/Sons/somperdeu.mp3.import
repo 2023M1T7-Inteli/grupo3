@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/somperdeu.mp3-04c8d6dbed8a0d52822599baa31f5bdb.mp3str"
+
+[deps]
+
+source_file="res://Sons/somperdeu.mp3"
+dest_files=[ "res://.import/somperdeu.mp3-04c8d6dbed8a0d52822599baa31f5bdb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
