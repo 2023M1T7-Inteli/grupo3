@@ -10,21 +10,27 @@ var contador = 0
 #define a variável zerar para a lista como false
 var zerar =  false
 
+# Variável que consta o último item pego pelo usuário caso ele não tenha visto o item dentro do baú. Usada para ativar a notificação do item.
 var notif
 
+# Variável para cada "diálogo" do tutorial inicial.
 var tutorialInicioCont = 0
 
+# Dicionário constando os itens do jogo, se foi pego e se já foi usado para ativar, dentro do código, a notificação.
 var itens = {"pipoca": [false, false],
 "baloes": [false, false],
 "instrumentos": [false, false],
 "roupa": [false, false],
 "fitas": [false, false]}
 
+# Variável que define qual personagem foi escolhido pelo usuário.
 var personagem
 
+# Função ready que reproduz a música do inicio do jogo.
 func _ready():
 	$musicaFundo.play()
 
+# Função que abaixa a intensidade do jogo gradativamente.
 func volume(song):
 	var music = get_node(song)
 	while music.volume_db > -80:

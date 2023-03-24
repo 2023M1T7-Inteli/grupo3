@@ -1,17 +1,17 @@
 extends Node2D
 
-#cria uma variável chamada "contador" com o valor inicial 0
+# Cria uma variável chamada "contador" com o valor inicial 0
 var contador = 0
-#variável que verifica se o tutorial terminou
+# Variável que verifica se o tutorial terminou
 var terminouTutorial = false
-#variável que armazena os textos que vão aparecer no diálogo
+# Variável que armazena os textos que vão aparecer no diálogo
 var dialogo = ["Pintor: Eu guardo as minhas tintas aqui. Para controlar o estoque eu costumo anotar a quantidade de latas de tinta que eu tenho. Se tenho 3 latas verdes e 3 latas roxas, quantas latas verdes e roxas tenho no toal?", "Pintor: Quantos potes de tinta tem na minha estante? Note que a estante tem 6 prateleiras com 3 latas em cada", "Pintor: Considerando todas as latas que tenho, se eu gastar 3 latas de tinta marrom e 3 latas de tinta roxa, quantas latas sobram no total?", "Pintor: Ontem eu tinha 22 latas de tinta mas emprestei algumas para uma amiga minha e hoje tenho apenas 18. Quantas latas eu emprestei para a minha amiga?",  "Pintor: Se eu tenho 6 cores e decido criar uma nova cor misturando parte da tinta azul e parte da marrom e outra nova cor misturando parte da roxa e parte da verde, com quantas cores ficarei no total?", "Pintor: Voce é muito bom em matemática, parabéns! Aqui está o quadro como prometido. Obrigado!"]
-
+# Variável que contém a resposta atual do usuário dentro da caixa de input.
 var resp = ""
 
-#função que roda a cada atualização da tela
+# Função que roda a cada atualização da tela
 func _process(_delta):
-	#define o texto que aparecerá na caixa de diálogo
+	# Define o texto que aparecerá na caixa de diálogo
 	$caixaDialogo.text = dialogo[contador]
 	$Resposta.text = resp
 	
@@ -24,11 +24,12 @@ func _process(_delta):
 		$enviar.visible = false
 		$botaoPassar.visible = true
 	
-#função ativada quando o botão "botaoPassar" for pressionado
+# Função ativada quando o botão "botaoPassar" for pressionado
 func _on_botaoPassar_pressed():
 	if contador == 5:
 		get_tree().change_scene("res://Telas/Arco1/cenaFestival.tscn")
 	
+# Função que ao licar no botão, recolhe a resposta do usuário a partir da variável "resp", e se a resposta for a certa para cada pergunta representada pelo contador, passará para a próxima pergunta e a variável de resposta apagará, se não, aparecerá a mensagem "tente novamente" e o usuário repetirá a mesma pergunta até acertar.
 func _on_enviarBtn_pressed():
 	if contador == 0 and $Resposta.text == "6":
 		contador += 1
@@ -62,6 +63,7 @@ func _on_enviarBtn_pressed():
 		yield(get_tree().create_timer(1.5), "timeout")
 		resp = ""
 
+#Botões que, ao clicar, adicionam o número contido no botão na resposta do usuário.
 func _on_Button0_pressed():
 	resp += "0"
 
@@ -92,5 +94,6 @@ func _on_Button8_pressed():
 func _on_Button9_pressed():
 	resp += "9"
 
+# Botão que, ao clicar, exclui o último número na resposta do usuário.
 func _on_deletBtn_pressed():
 	resp.erase(resp.length() - 1, 1)

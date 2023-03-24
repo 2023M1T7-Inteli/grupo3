@@ -9,7 +9,7 @@ var numero2
 var soma
 #cria a variável "temporizador" para armazenar um número contador
 var temporizador = 0
-
+# Carrega, dentro das variáveis, o sprite de cada personagem.
 var joao = load("res://Imagens/sprite boy grande 3_0.png")
 var maria = load("res://Imagens/spriteGirl.png")
 

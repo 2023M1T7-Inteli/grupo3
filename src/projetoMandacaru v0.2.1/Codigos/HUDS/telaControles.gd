@@ -19,5 +19,6 @@ func _on_botaoSom_pressed():
 		#muda o ícone para o botão não mutado
 		$botaoSom.icon = preload("res://Imagens/speaker.png")
 
+# Botão para voltar à tela inicial.
 func _on_VoltarBtn_pressed():
 	get_tree().change_scene("res://Telas/telaIinicial/telaInicial.tscn")
