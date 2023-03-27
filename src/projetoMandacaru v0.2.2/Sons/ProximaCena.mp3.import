@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ProximaCena.mp3-cfeca1cf10070de6da3b41f81832beee.mp3str"
+
+[deps]
+
+source_file="res://Sons/ProximaCena.mp3"
+dest_files=[ "res://.import/ProximaCena.mp3-cfeca1cf10070de6da3b41f81832beee.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
