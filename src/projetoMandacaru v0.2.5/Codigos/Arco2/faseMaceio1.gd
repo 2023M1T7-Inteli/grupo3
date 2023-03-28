@@ -4,15 +4,14 @@ extends Node2D
 var explodiu = false
 
 func _ready():
-	$transicaoVento/TextureRect.texture = preload("res://Imagens/praia.jpg")
-	$transicaoVento/Label.text = "MACEIO"
+	$transicaoVento2/Label.text = "MACEIO"
 
 func _process(delta):
-	if $transicaoVento.terminou:
+	if $transicaoVento2.terminou:
 		#torna a cena "transiçãoVento" escondida
-		$transicaoVento.visible = false
+		$transicaoVento2.visible = false
 		
-		$transicaoVento.terminou = false
+		$transicaoVento2.terminou = false
 	
 func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://Telas/Arco2/faseMaceio2.tscn")

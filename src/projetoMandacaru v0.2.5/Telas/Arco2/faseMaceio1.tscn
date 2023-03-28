@@ -7,7 +7,7 @@
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesert_Assets/Minifantasy_DesolateDesertTiles.png" type="Texture" id=5]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesert_Assets/Props/Minifantasy_DesolateDesertProps.png" type="Texture" id=6]
 [ext_resource path="res://Imagens/explosivo.png" type="Texture" id=7]
-[ext_resource path="res://Telas/transicoes/testeTransicao.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Telas/transicaoVento2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=14]
 0/name = "Minifantasy_DesolateDesertTiles.png 0"
@@ -680,7 +680,7 @@ shape = SubResource( 13 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[node name="transicaoVento" parent="." instance=ExtResource( 8 )]
+[node name="transicaoVento2" parent="." instance=ExtResource( 8 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="AnimatedSprite/Area2D2" to="." method="_on_Area2D2_body_entered"]
