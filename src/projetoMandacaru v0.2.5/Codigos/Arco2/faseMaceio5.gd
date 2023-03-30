@@ -4,7 +4,7 @@ extends Node2D
 var explodiu = false
 
 func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://Telas/Arco1/cenaFestival.tscn")
+	get_tree().change_scene("res://Telas/Arco2/cenaCatedral.tscn")
 
 
 func _on_Area2D2_body_entered(body):

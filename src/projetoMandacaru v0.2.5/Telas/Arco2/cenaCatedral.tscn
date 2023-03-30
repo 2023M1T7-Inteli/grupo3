@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesertTiles.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Imagens/nuvem/ceu (3).png" type="Texture" id=8]
 [ext_resource path="res://Imagens/catedral 2.png" type="Texture" id=9]
 [ext_resource path="res://Telas/transicoes/transicao.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Imagens/farolMaceio.png" type="Texture" id=11]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Imagens/numericKeyboard.png" type="Texture" id=13]
+[ext_resource path="res://Imagens/delet.png" type="Texture" id=14]
 
 [sub_resource type="TileSet" id=9]
 0/name = "ceu (1).png 0"
@@ -502,10 +506,47 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("padre:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("padre:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("padre:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "cutsceneCatedral"
-length = 8.7
+length = 10.0
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("personagem:position")
 tracks/0/interp = 1
@@ -513,10 +554,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.4, 1.4, 3.5, 3.7, 8.5 ),
+"times": PoolRealArray( -0.4, 1.4, 3.5, 3.7, 7.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 38, 1036 ), Vector2( 38, 1036 ), Vector2( 178, 907 ), Vector2( 178, 907 ), Vector2( 977, 922 ) ]
+"values": [ Vector2( 38, 1036 ), Vector2( 38, 1036 ), Vector2( 178, 907 ), Vector2( 178, 907 ), Vector2( 815, 922 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("personagem:playing")
@@ -525,7 +566,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.4, 3.5, 3.7, 8.5 ),
+"times": PoolRealArray( 0, 1.4, 3.5, 3.7, 7.48 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false, true, false ]
@@ -537,11 +578,62 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 8.5, 8.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 8.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ "lado", "lado", "costas" ]
+"values": [ "lado", "lado" ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("padre:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 9.4, 9.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 6 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("padre:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 9.4, 9.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="DynamicFont" id=19]
+size = 44
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 64
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0, 0, 0, 1 )
 
 [node name="cena" type="Node2D"]
 script = ExtResource( 4 )
@@ -580,4 +672,231 @@ animation = "costas"
 anims/RESET = SubResource( 16 )
 anims/cutsceneCatedral = SubResource( 17 )
 
+[node name="padre" type="Sprite" parent="."]
+visible = false
+position = Vector2( 972.969, 906.914 )
+scale = Vector2( 0.240156, 0.240156 )
+texture = ExtResource( 1 )
+hframes = 3
+vframes = 3
+
+[node name="diálogo" type="Node2D" parent="."]
+visible = false
+
+[node name="fundo" type="ColorRect" parent="diálogo"]
+light_mask = 2
+margin_left = -94.0
+margin_top = -36.0
+margin_right = 1960.0
+margin_bottom = 1120.0
+color = Color( 0, 0, 0, 0.411765 )
+
+[node name="fundo2" type="ColorRect" parent="diálogo"]
+margin_left = 388.0
+margin_top = 101.0
+margin_right = 1568.0
+margin_bottom = 342.0
+color = Color( 0.956863, 0.929412, 0.929412, 0.411765 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="fundo3" type="ColorRect" parent="diálogo/fundo2"]
+margin_left = -3.0
+margin_top = 1.0
+margin_right = 1177.0
+margin_bottom = 242.0
+color = Color( 0.956863, 0.929412, 0.929412, 0.411765 )
+
+[node name="caixaDialogo" type="Label" parent="diálogo"]
+margin_left = 400.0
+margin_top = 118.0
+margin_right = 1551.0
+margin_bottom = 321.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Light2D" type="Light2D" parent="diálogo"]
+position = Vector2( 812.5, 926.25 )
+scale = Vector2( 0.536458, 1.375 )
+texture = ExtResource( 11 )
+color = Color( 1, 1, 1, 0 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="Light2D2" type="Light2D" parent="diálogo"]
+position = Vector2( 974.75, 913.125 )
+scale = Vector2( 0.606771, 1.4838 )
+texture = ExtResource( 11 )
+color = Color( 1, 1, 1, 0 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="botaoPassar" type="Button" parent="diálogo"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 1923.0
+margin_bottom = 1082.0
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+icon_align = 1
+expand_icon = true
+
+[node name="resposta" type="Label" parent="."]
+visible = false
+margin_left = 793.0
+margin_top = 394.0
+margin_right = 1154.0
+margin_bottom = 457.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+custom_styles/normal = SubResource( 22 )
+align = 1
+valign = 1
+
+[node name="teclado" type="Node2D" parent="."]
+visible = false
+
+[node name="tecladoNumerico" type="Sprite" parent="teclado"]
+light_mask = 0
+position = Vector2( 281, 631 )
+scale = Vector2( 0.610714, 0.610714 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button0" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 0, 0, 0, 0 )
+margin_left = -262.0
+margin_top = -396.0
+margin_right = -104.0
+margin_bottom = -202.0
+
+[node name="Button1" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -81.0
+margin_top = -389.0
+margin_right = 88.0
+margin_bottom = -206.0
+
+[node name="Button2" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 93.0
+margin_top = -395.0
+margin_right = 262.0
+margin_bottom = -205.0
+
+[node name="Button3" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -261.0
+margin_top = -194.0
+margin_right = -100.0
+margin_bottom = -6.0
+
+[node name="Button4" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_top = -195.0
+margin_right = 81.0
+margin_bottom = -11.0
+
+[node name="Button5" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 94.0
+margin_top = -201.0
+margin_right = 272.0
+margin_bottom = -14.0
+
+[node name="Button6" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -265.0
+margin_top = 3.0
+margin_right = -96.0
+margin_bottom = 198.0
+
+[node name="Button7" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -87.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 186.0
+
+[node name="Button8" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 93.0
+margin_top = 5.0
+margin_right = 257.0
+margin_bottom = 192.0
+
+[node name="Button9" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_top = 206.0
+margin_right = 82.0
+margin_bottom = 393.0
+
+[node name="delet" type="Sprite" parent="teclado"]
+light_mask = 2
+position = Vector2( 1123.75, 424.25 )
+scale = Vector2( 0.368182, 0.368182 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="deletBtn" type="Button" parent="teclado/delet"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -58.0
+margin_top = -44.0
+margin_right = 52.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="enviar" type="Label" parent="teclado"]
+margin_left = 1465.0
+margin_top = 553.0
+margin_right = 1852.0
+margin_bottom = 681.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+text = "ENVIAR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="enviarBtn" type="Button" parent="teclado/enviar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 100.0
+
 [node name="transicao" parent="." instance=ExtResource( 10 )]
+
+[connection signal="pressed" from="diálogo/botaoPassar" to="." method="_on_botaoPassar_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button0" to="." method="_on_Button0_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="teclado/delet/deletBtn" to="." method="_on_deletBtn_pressed"]
+[connection signal="pressed" from="teclado/enviar/enviarBtn" to="." method="_on_enviarBtn_pressed"]
