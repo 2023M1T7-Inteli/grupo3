@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/praia.jpg-8902557be7e1c5a4a4befcaeee2969a0.stex"
+path="res://.import/padre.png-61dcc5f64e247c34a45a7305147f3d3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/praia.jpg"
-dest_files=[ "res://.import/praia.jpg-8902557be7e1c5a4a4befcaeee2969a0.stex" ]
+source_file="res://Imagens/padre.png"
+dest_files=[ "res://.import/padre.png-61dcc5f64e247c34a45a7305147f3d3b.stex" ]
 
 [params]
 
