@@ -23,7 +23,7 @@ func _on_BotaoJoao_pressed():
 func _on_BotaoMaria_pressed():
 	Global.personagem = 2
 	Global.volume("musicaFundo")
-	get_tree().change_scene("res://Telas/Arco1/faseCanions1.tscn"
+	get_tree().change_scene("res://Telas/Arco1/faseCanions1.tscn")
 	
 #função que muta ou desmuta a música
 func _on_botaoSom_pressed():
