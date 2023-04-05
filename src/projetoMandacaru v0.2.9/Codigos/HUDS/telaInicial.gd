@@ -1,0 +1,92 @@
+extends Control
+
+#define uma variável chamada "contador", que irá armazenar o valor 0
+var contador = 0
+#define uma variável chamada "validação" com o valor verdadeiro
+var validacao = true
+#carrega a imagem de mutar a música
+var mutadoIcone = preload("res://Imagens/mute.png")
+#carrega  aimagem da música silenciada
+var desmutadoIcone = preload("res://Imagens/speaker.png")
+
+#função que inicia quando a cena é chamada
+func _ready():
+	#inicia a animação "tittle" que movimenta o personagem
+	$tituloAnim.play("title")
+	
+#função que roda a cada frame do jogo
+func _process(delta):
+	if !Global.get_node("musicaFundo").stream_paused:
+		$botaoSom.icon = desmutadoIcone
+	else: $botaoSom.icon = mutadoIcone
+	
+	#função que inicia se a variável validação for verdadeira
+	if validacao:
+		#adiciona o valor 1 ao contador
+		contador += 1
+		#condição que inicia se o contador exceder 140
+		if contador >= 140:
+			#torna a variável "validação" falsa
+			validacao = false
+			#reinicia o contador
+			contador = 0
+			
+#função ativada quando o botão "botaoIniciar" for pressionado
+func _on_botaoIniciar_pressed():
+	#cria uma árvore de cenas que chama a fase 1
+	get_tree().change_scene("res://Telas/telaIinicial/telaPersonagens.tscn")
+	
+#função ativada quando o botão "botaoControles" for pressionado
+func _on_botaoControles_pressed():
+	#cria uma árvore de cenas que chama a tela de controles
+	get_tree().change_scene("res://Telas/telaIinicial/telaControles.tscn")
+
+#função ativada quando o botão "botaoSair" for pressionado
+func _on_botaoSair_pressed():
+	#finaliza a árvore de cenas e fecha o jogo
+	get_tree().quit()
+	
+#função ativada quando o mouse entrar no botão "botaoSair"
+func _on_botaoSair_mouse_entered():
+	#inicia o áudio "botaoSelecionado"
+	$botaoSelecionado.play()
+	$botaoSair.icon = preload("res://Imagens/sairpress.png")
+	
+#função ativada quando o mouse entrar no botão "botaoControles"
+func _on_botaoControles_mouse_entered():
+	#inicia o áudio "botaoSelecionado"
+	$botaoSelecionado.play()
+	$botaoControles.icon = preload("res://Imagens/controlespress.png")
+	
+#função ativada quando o mouse entrar no botão "botaoIniciar"
+func _on_botaoIniciar_mouse_entered():
+	#inicia o áudio "botaoSelecionado"
+	$botaoSelecionado.play()
+	$botaoIniciar.icon = preload("res://Imagens/iniciarpress.png")
+	
+#função ativada quando o botão "botaoSom" for pressionado
+func _on_botaoSom_pressed():
+	#condição que inicia se a música de fundo não estiver pausada
+	if !Global.musica_fundo.stream_paused:
+		#torna a parada da música de fundo verdadeira
+		Global.musica_fundo.stream_paused = true
+		#muda o ícone para o botão mutado
+		$botaoSom.icon = mutadoIcone
+	#inicia se a condição acima não for validada
+	else:
+		#torna a parada da música de fundo falsa
+		Global.musica_fundo.stream_paused = false
+		#muda o ícone para o botão não mutado
+		$botaoSom.icon = desmutadoIcone
+
+
+func _on_botaoIniciar_mouse_exited():
+	$botaoIniciar.icon = preload("res://Imagens/iniciar.png")
+
+
+func _on_botaoSair_mouse_exited():
+	$botaoSair.icon = preload("res://Imagens/sair.png")
+
+
+func _on_botaoControles_mouse_exited():
+	$botaoControles.icon = preload("res://Imagens/controles.png")
