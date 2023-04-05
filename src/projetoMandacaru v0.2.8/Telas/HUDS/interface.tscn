@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Imagens/Setas/botaoPlay.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Setas/seta__baixo.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Sons/BauFechando.mp3" type="AudioStream" id=13]
 [ext_resource path="res://Imagens/Notif.png" type="Texture" id=14]
 [ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Telas/HUDS/cenaPause.tscn" type="PackedScene" id=16]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -88,6 +89,9 @@ font_data = ExtResource( 15 )
 
 [node name="Interface" type="Node2D"]
 script = ExtResource( 4 )
+
+[node name="cenaPause" parent="." instance=ExtResource( 16 )]
+position = Vector2( 110, -18 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 20.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Telas/HUDS/personagemCena.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Telas/HUDS/interface.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Imagens/Minifantasy_DesolateDesert_Assets/Props/Minifantasy_DesolateDesertProps.png" type="Texture" id=4]
 [ext_resource path="res://Codigos/Arco1/faseCanions2.gd" type="Script" id=5]
 [ext_resource path="res://Telas/Itens/Baloes.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Telas/HUDS/cenaPause.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=6]
 0/name = "Minifantasy_DesolateDesertTiles.png 0"
@@ -620,8 +619,6 @@ position = Vector2( 1, 0 )
 shape = SubResource( 12 )
 
 [node name="Baloes" parent="AreaItem" instance=ExtResource( 6 )]
-
-[node name="cenaPause" parent="." instance=ExtResource( 7 )]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="AreaItem" to="." method="_on_AreaItem_body_entered"]
