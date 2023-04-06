@@ -4,7 +4,7 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-BUMBÁ-CODE
+BUMBA CODE
 
 Grupo Mandaracu
 
@@ -17,7 +17,7 @@ Grupo Mandaracu
 Meu projeto e toda sua documentação vão ser documentados nesse repositório.
 <br><br>
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
+<img src="https://files.slack.com/files-pri/T02DWH2MXQR-F051Q208T1B/image.png" alt="BUMBA CODE" border="0">
 </p>
 
 
@@ -52,6 +52,8 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 -<a href="https://godotengine.org/download">GODOT</a>
 
 ## 📋 Licença/License
+
+- mais sobre as licenças utilizadas no GDD na pasta de documentação!
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">INTELI, VICTOR BRUNO ALEXANDER ROSETTI DE QUIROZ</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
 
