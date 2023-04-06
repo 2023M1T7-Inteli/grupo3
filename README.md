@@ -14,10 +14,10 @@ Grupo Mandaracu
 
 📜 Somos o grupo "Mandacaru" e estamos desenvolvendo um game para ensinar lógica de programação e matemática básica para crianças junto com a UFAL (Universidade Federal de Alagoas)
 <br><br>
-Meu projeto e toda sua documentação vão ser documentados nesse repositório.
+Nosso projeto e toda sua documentação vão ser documentados nesse repositório.
 <br><br>
 <p align="center">
-<img src="https://files.slack.com/files-pri/T02DWH2MXQR-F051Q208T1B/image.png" alt="BUMBA CODE" border="0">
+<img src=""C:\Users\Inteli\Downloads\bumba.jpg"" alt="BUMBA CODE" border="0">
 </p>
 
 
@@ -59,4 +59,4 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 ## 🎓 Referências
 
-Até o momento as referências estão sendo armazenadas
+Até o momento as referências estão sendo armazenadas no GDD, na pasta de documentação desse repositório.
