@@ -17,7 +17,7 @@ Grupo Mandaracu
 Nosso projeto e toda sua documentação vão ser documentados nesse repositório.
 <br><br>
 <p align="center">
-<img src=""C:\Users\Inteli\Downloads\bumba.jpg"" alt="BUMBA CODE" border="0">
+
 </p>
 
 
