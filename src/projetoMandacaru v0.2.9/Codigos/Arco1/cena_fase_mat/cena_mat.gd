@@ -27,7 +27,7 @@ func _process(_delta):
 # Função ativada quando o botão "botaoPassar" for pressionado
 func _on_botaoPassar_pressed():
 	if contador == 5:
-		Global.canionsDouradosfez = true
+
 		get_tree().change_scene("res://Telas/Arco2/faseMaceio1.tscn")
 	
 # Função que ao licar no botão, recolhe a resposta do usuário a partir da variável "resp", e se a resposta for a certa para cada pergunta representada pelo contador, passará para a próxima pergunta e a variável de resposta apagará, se não, aparecerá a mensagem "tente novamente" e o usuário repetirá a mesma pergunta até acertar.
