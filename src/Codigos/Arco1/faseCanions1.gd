@@ -6,7 +6,6 @@ func _ready():
 	$tutorialCena.visible = false
 	yield(get_tree().create_timer(3), "timeout")
 	Global.get_node("musicaPrincipal").play()
-	$Interface/Bau.visible = true
 	
 	
 #função que roda junto à atualização de frames
