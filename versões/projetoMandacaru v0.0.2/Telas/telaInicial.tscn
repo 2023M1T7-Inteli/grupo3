@@ -1,0 +1,222 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Imagens/somicone.png" type="Texture" id=1]
+[ext_resource path="res://Codigos/telaInicial.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sons/Forro Brasil - Hermeto Pascoal (8 bits).WAV" type="AudioStream" id=4]
+[ext_resource path="res://Sons/sombotaopressionado.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Telas/transicao.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+loop = true
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("caixaBotoes:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 780, 455 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("titulo:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 90 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "cenaInicial"
+length = 3.0
+loop = true
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("caixaBotoes:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5, 2.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 780, 422.984 ), Vector2( 779, 447 ), Vector2( 780, 422.984 ), Vector2( 779, 447 ), Vector2( 780, 422.985 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("titulo:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5, 2.2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 90 ), Vector2( 0, 110 ), Vector2( 0, 90 ), Vector2( 0, 110 ), Vector2( 0, 90 ) ]
+}
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.513967, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 1, 1, 1, 0, 0.390625, 1, 1 )
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+width = 1920
+height = 1080
+
+[sub_resource type="DynamicFont" id=6]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 187
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="telaInicial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="animacaoBotoes" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/cenaInicial = SubResource( 8 )
+
+[node name="paineldefundo" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 5 )
+
+[node name="papelTranslucido" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.607843 )
+
+[node name="caixaBotoes" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -180.0
+margin_top = -85.0
+margin_right = 180.01
+margin_bottom = 150.018
+rect_rotation = -1.0
+custom_constants/separation = 36
+
+[node name="botaoIniciar" type="Button" parent="caixaBotoes"]
+margin_right = 360.0
+margin_bottom = 54.0
+theme = SubResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Iniciar"
+
+[node name="botaoControles" type="Button" parent="caixaBotoes"]
+margin_top = 90.0
+margin_right = 360.0
+margin_bottom = 144.0
+theme = SubResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Controles"
+icon_align = 1
+
+[node name="botaoSair" type="Button" parent="caixaBotoes"]
+margin_top = 180.0
+margin_right = 360.0
+margin_bottom = 234.0
+theme = SubResource( 2 )
+custom_colors/font_color_hover = Color( 1, 0.866667, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.384314, 0, 1, 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Sair"
+icon_align = 1
+
+[node name="titulo" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.141
+anchor_right = 0.5
+anchor_bottom = 0.141
+margin_left = -960.0
+margin_top = -62.28
+margin_right = 960.0
+margin_bottom = 62.72
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 9
+custom_constants/line_spacing = 17
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = SubResource( 9 )
+text = "BUMBA CODE"
+align = 1
+valign = 1
+
+[node name="musicaFundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -2.622
+
+[node name="botaoselecionado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.255
+
+[node name="botaosom" type="Button" parent="."]
+margin_left = 1778.0
+margin_top = 24.0
+margin_right = 1898.0
+margin_bottom = 147.0
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+icon = ExtResource( 1 )
+icon_align = 1
+expand_icon = true
+
+[node name="transicao" parent="." instance=ExtResource( 8 )]
+position = Vector2( 30, -28 )
+
+[connection signal="mouse_entered" from="caixaBotoes/botaoIniciar" to="." method="_on_botaoIniciar_mouse_entered"]
+[connection signal="pressed" from="caixaBotoes/botaoIniciar" to="." method="_on_botaoIniciar_pressed"]
+[connection signal="mouse_entered" from="caixaBotoes/botaoControles" to="." method="_on_botaoControles_mouse_entered"]
+[connection signal="pressed" from="caixaBotoes/botaoControles" to="." method="_on_botaoControles_pressed"]
+[connection signal="mouse_entered" from="caixaBotoes/botaoSair" to="." method="_on_botaoSair_mouse_entered"]
+[connection signal="pressed" from="caixaBotoes/botaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="finished" from="musicaFundo" to="." method="_on_musicaFundo_finished"]
+[connection signal="pressed" from="botaosom" to="." method="_on_botaosom_pressed"]

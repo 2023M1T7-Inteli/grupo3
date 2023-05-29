@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Codigos/Arco1/cenaPescador.gd" type="Script" id=3]
+[ext_resource path="res://Imagens/cena_casa_pintor.jpg" type="Texture" id=4]
+[ext_resource path="res://Imagens/pintor.png" type="Texture" id=5]
+[ext_resource path="res://Telas/dialogos/dialogoPintor.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+
+[sub_resource type="Animation" id=22]
+resource_name = "chegada"
+length = 3.0
+
+[node name="cenaPescador" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="fundo" type="TextureRect" parent="."]
+margin_top = -9.0
+margin_right = 1927.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="dialogoPintor" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 0, -9 )
+
+[node name="animacaoChegada" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 21 )
+anims/chegada = SubResource( 22 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1282, 856 )
+scale = Vector2( 7, 7 )
+texture = ExtResource( 5 )

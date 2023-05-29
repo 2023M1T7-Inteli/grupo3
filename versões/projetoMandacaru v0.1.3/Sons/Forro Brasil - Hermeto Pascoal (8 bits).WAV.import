@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Forro Brasil - Hermeto Pascoal (8 bits).WAV-82de2b454d0e01e941376afaa1d6ef0a.sample"
+
+[deps]
+
+source_file="res://Sons/Forro Brasil - Hermeto Pascoal (8 bits).WAV"
+dest_files=[ "res://.import/Forro Brasil - Hermeto Pascoal (8 bits).WAV-82de2b454d0e01e941376afaa1d6ef0a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

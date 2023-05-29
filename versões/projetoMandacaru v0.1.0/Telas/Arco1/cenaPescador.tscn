@@ -1,0 +1,166 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=1]
+[ext_resource path="res://Codigos/Arco1/cenaPescador.gd" type="Script" id=3]
+[ext_resource path="res://Imagens/cena_casa_pintor.jpg" type="Texture" id=4]
+[ext_resource path="res://Imagens/pintor.png" type="Texture" id=5]
+[ext_resource path="res://Telas/dialogos/dialogoPintor.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("animacaoPersonagem:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("animacaoPersonagem:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -176, 861 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("animacaoPersonagem:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Direita" ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "chegada"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("animacaoPersonagem:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("animacaoPersonagem:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Direita", "Direita", "Desce" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("animacaoPersonagem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -205, 933 ), Vector2( 956, 930 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 0, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 1184, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 1184, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 592, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 592, 400, 592 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 592, 400, 592 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Desce",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "Direita",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Sobe",
+"speed": 5.0
+} ]
+
+[node name="cenaPescador" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="fundo" type="TextureRect" parent="."]
+margin_top = -9.0
+margin_right = 1927.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="pintor" type="Sprite" parent="."]
+position = Vector2( 1214, 885 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="dialogoPintor" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 0, -9 )
+
+[node name="animacaoChegada" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 21 )
+anims/chegada = SubResource( 22 )
+
+[node name="animacaoPersonagem" type="AnimatedSprite" parent="."]
+position = Vector2( -176, 861 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 23 )
+animation = "Direita"
+playing = true

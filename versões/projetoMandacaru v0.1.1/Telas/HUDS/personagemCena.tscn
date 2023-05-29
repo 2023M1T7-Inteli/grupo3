@@ -1,0 +1,227 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sons/passosSom.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=2]
+[ext_resource path="res://Sons/somperdeu.mp3" type="AudioStream" id=3]
+
+[sub_resource type="GDScript" id=21]
+script/source = "extends KinematicBody2D
+
+#boleana que armazena o valor verdadeiro para \"começou\" e falso para \"não começou\"
+var comecou = false
+#variável booleana que confere se o jogador perdeu
+var perdeu = false
+#variavel que determina a velocidade do personagem
+var velocidade = 400
+#variavel Vector2 que determina o movimento total do personagem baseado na variavel velocidade
+var movimento = Vector2.ZERO
+#variavel que registra a direção atual do movimento do personagem
+var direcaoAtual
+
+var joao = load(\"res://Imagens/sprite boy grande 3_0.png\")
+var maria = load(\"res://Imagens/spriteGirl.png\")
+
+func _ready():
+	if Global.personagem == 1:
+		$Sprite.texture = joao
+	else:
+		$Sprite.texture = maria
+
+
+func _process(delta):
+	if Input.is_action_pressed(\"ui_end\"):
+		adicionarcenapause()
+#função que inicia, simulando os valores de física do jogo
+# warning-ignore:unused_argument
+func _physics_process(delta):
+	#funcao que movimenta o personagem na cena e retorna se o personagem colidiu em algum objeto
+	var colidiu = move_and_collide(movimento * delta)
+	#controle da colisao do personagem
+	if colidiu:
+		#vetor que registra o quanto o personagem entrou em outro objeto
+		var vetorEmpurra = colidiu.normal * -colidiu.remainder
+		#reverte o quanto o personagem entrou em outro objeto
+		move_and_slide(vetorEmpurra)
+		#chama a funcao processarLista
+		processarLista()
+		
+	#condição que inicia se a variável global \"iniciou\" for verdadeira
+	if Global.iniciou:
+		#torna a variável \"começou\" verdadeira
+		comecou = true
+		#chama a funcao processarLista
+		processarLista()
+		#Torna a variável global \"iniciou\" falsa
+		Global.iniciou = false
+			
+	#condição que inicia se a variável \"perdeu\" for verdadeira
+	if perdeu:
+		#torna a variável \"começou\" falsa
+		comecou = false
+	
+#função que, quando instanciada, troca a cena atual
+func trocarcena():
+	#abre uma árvore de cenas, mudando para a cena \"cenaCatedral\"
+# warning-ignore:return_value_discarded
+	get_tree().change_scene(\"res://Telas/cenaCatedral.tscn\")
+	
+#função que, quando instanciada, adiciona uma cena flutuante que simula o Game Over
+func adicionarcenaperdeu():
+	#variável que armazena um pré-carregamento da cena \"cenaperdeu\"
+	var preloadcenaperdeu = preload(\"res://Telas/HUDS/cenaPerdeu.tscn\").instance()
+	#adiciona uma cena filha com o valor de \"preloadcenaperdeu\"
+	get_tree().current_scene.add_child(preloadcenaperdeu)
+	
+func adicionarcenapause():
+	var preloadcenapause = preload(\"res://Telas/HUDS/pause.tscn\").instance()
+	get_tree().current_scene.add_child(preloadcenapause)
+
+#faz o controle das informacoes de movimento contidas na lista global
+func processarLista():
+	#checa se ainda há posicoes na lista global
+	if Global.lista.size()>0:
+		#atualiza a variavel direcaoAtual
+		direcaoAtual = Global.lista.pop_front()
+	#inicia a tela de derrota no caso de a lista estar vazia
+	else:	
+		#inicia o som \"somPerdeu\"
+		$somPerdeu.play()
+		#inicia a função \"adicionarcenaperdeu\" que traz a cena de Game Over
+		adicionarcenaperdeu()
+		#torna a variável \"perdeu\" verdadeira
+		perdeu = true
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"esquerda\"
+	if direcaoAtual == \"esquerda\":
+		#adiciona o valor -200 ao vetor x da variável \"movimento\"
+		movimento = Vector2(-velocidade, 0)
+		#inicia a animação \"Direita\", que simula a moviemtação para a direita
+		$AnimationPlayer.play(\"Direita\")
+		#inverte horizontalmente a animação, para simular uma movimentação para a esquerda
+		$Sprite.flip_h = true
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"direita\"
+	elif direcaoAtual == \"direita\":
+		#adiciona o valor 200 ao vetor x da variável \"movimento\"
+		movimento = Vector2(velocidade, 0)
+		#inicia a animação \"Direita\", que simula a moviemtação para a direita
+		$AnimationPlayer.play(\"Direita\")
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"cima\"
+	elif direcaoAtual == \"cima\":
+		#adiciona o valor -200 ao vetor y da variável \"movimento\"
+		movimento = Vector2(0, -velocidade)
+		#inicia a animação \"Sobe\", que simula a moviemtação para cima
+		$AnimationPlayer.play(\"Sobe\")
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+	#condição que inicia se a posição \"contador\" da lista global for igual à variável \"baixo\"
+	elif direcaoAtual == \"baixo\":
+		#adiciona o valor 200 ao vetor y da variável \"movimento\"
+		movimento = Vector2(0, velocidade)
+		#inicia a animação \"Desce\", que simula a moviemtação para baixo
+		$AnimationPlayer.play(\"Desce\")
+		#inicia o som \"somPassos\"
+		$somPassos.play()
+"
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 19.5, 27.5 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "Desce"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("corpoJogador/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Direita"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("corpoJogador/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 7 ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("corpoJogador/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "Sobe"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("corpoJogador/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5 ]
+}
+
+[node name="personagemCena" type="Node2D"]
+
+[node name="corpoJogador" type="KinematicBody2D" parent="."]
+script = SubResource( 21 )
+
+[node name="corpodeColisao" type="CollisionShape2D" parent="corpoJogador"]
+position = Vector2( 106.5, 129.5 )
+shape = SubResource( 22 )
+
+[node name="Sprite" type="Sprite" parent="corpoJogador"]
+position = Vector2( 107, 129 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="somPerdeu" type="AudioStreamPlayer2D" parent="corpoJogador"]
+stream = ExtResource( 3 )
+volume_db = -9.244
+
+[node name="somPassos" type="AudioStreamPlayer2D" parent="corpoJogador"]
+stream = ExtResource( 1 )
+volume_db = 6.992
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="corpoJogador"]
+root_node = NodePath("../..")
+anims/Desce = SubResource( 25 )
+anims/Direita = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+anims/Sobe = SubResource( 26 )

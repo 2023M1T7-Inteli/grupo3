@@ -1,0 +1,342 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Imagens/Setas/botaoPlay.png" type="Texture" id=1]
+[ext_resource path="res://Imagens/Setas/seta__baixo.png" type="Texture" id=2]
+[ext_resource path="res://Imagens/Setas/seta__cima.png" type="Texture" id=3]
+[ext_resource path="res://Codigos/HUDS/principal.gd" type="Script" id=4]
+[ext_resource path="res://Imagens/Setas/seta__direita.png" type="Texture" id=5]
+[ext_resource path="res://Imagens/Setas/seta__esquerda.png" type="Texture" id=6]
+[ext_resource path="res://Imagens/Setas/BaixoAmareloGrande.png" type="Texture" id=7]
+[ext_resource path="res://Imagens/lixeira.png" type="Texture" id=8]
+[ext_resource path="res://Imagens/Bau.png" type="Texture" id=9]
+[ext_resource path="res://Imagens/Inventario.jpg" type="Texture" id=10]
+[ext_resource path="res://Codigos/HUDS/Bau.gd" type="Script" id=11]
+[ext_resource path="res://Sons/BauAbrindo.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Sons/BauFechando.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Imagens/Notif.png" type="Texture" id=14]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Telas/HUDS/cenaPause.tscn" type="PackedScene" id=16]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0, 0, 0.0313726 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0, 0, 0.0313726 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0, 0, 0.0313726 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0, 0, 0.0313726 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "AbreInventario"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Inventario:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.406127, 1 ),
+"update": 0,
+"values": [ Vector2( 2090, 58 ), Vector2( 1554, 58 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "FechaInventario"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Inventario:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 2.46229, 1 ),
+"update": 0,
+"values": [ Vector2( 1554, 58 ), Vector2( 2090, 58 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+
+[sub_resource type="DynamicFont" id=15]
+size = 32
+font_data = ExtResource( 15 )
+
+[node name="Interface" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="cenaPause" parent="." instance=ExtResource( 16 )]
+position = Vector2( -3, -9 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 20.0
+margin_top = 833.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+color = Color( 0, 0, 0, 0.196078 )
+
+[node name="botaoEsquerda" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 833.0
+margin_right = 262.0
+margin_bottom = 1055.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 10 )
+icon = ExtResource( 6 )
+icon_align = 1
+
+[node name="botaoDireita" type="Button" parent="."]
+margin_left = 270.0
+margin_top = 833.0
+margin_right = 500.0
+margin_bottom = 1055.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+icon = ExtResource( 5 )
+icon_align = 1
+
+[node name="botaoCima" type="Button" parent="."]
+margin_left = 769.0
+margin_top = 833.0
+margin_right = 999.0
+margin_bottom = 1055.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+icon = ExtResource( 3 )
+icon_align = 1
+
+[node name="botaoBaixo" type="Button" parent="."]
+margin_left = 524.0
+margin_top = 833.0
+margin_right = 754.0
+margin_bottom = 1055.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+icon = ExtResource( 2 )
+icon_align = 1
+
+[node name="botaoIniciar" type="Button" parent="."]
+margin_left = 1626.0
+margin_top = 840.0
+margin_right = 1826.0
+margin_bottom = 1054.0
+rect_scale = Vector2( 1.2, 1 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+icon = ExtResource( 1 )
+icon_align = 1
+
+[node name="botaoDelete" type="Button" parent="."]
+margin_left = 1090.0
+margin_top = 834.0
+margin_right = 1298.0
+margin_bottom = 1056.0
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 200, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 300, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 400, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+visible = false
+position = Vector2( 900, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite9" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1000, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite10" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1098, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite11" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1195, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+visible = false
+position = Vector2( 500, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+visible = false
+position = Vector2( 600, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+visible = false
+position = Vector2( 700, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+visible = false
+position = Vector2( 800, 600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -214, 276 )
+
+[node name="Bau" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Light2D" type="Light2D" parent="Bau"]
+position = Vector2( 2148, 64 )
+scale = Vector2( 20.5625, 4.375 )
+texture = ExtResource( 9 )
+color = Color( 1, 1, 1, 0 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="Inventario" type="Sprite" parent="Bau"]
+light_mask = 2
+position = Vector2( 2090, 58 )
+scale = Vector2( 1.35, 1.35 )
+texture = ExtResource( 10 )
+
+[node name="Bau" type="Sprite" parent="Bau"]
+position = Vector2( 1846, 56 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+
+[node name="BauBtn" type="Button" parent="Bau/Bau"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -15.0
+margin_top = -12.0
+margin_right = 16.0
+margin_bottom = 12.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="anim" type="AnimationPlayer" parent="Bau"]
+anims/AbreInventario = SubResource( 12 )
+anims/FechaInventario = SubResource( 13 )
+anims/RESET = SubResource( 14 )
+
+[node name="BauFechando" type="AudioStreamPlayer" parent="Bau"]
+stream = ExtResource( 13 )
+volume_db = -8.0
+
+[node name="BauAbrindo" type="AudioStreamPlayer" parent="Bau"]
+stream = ExtResource( 12 )
+volume_db = -8.0
+
+[node name="Notif" type="Sprite" parent="Bau"]
+visible = false
+position = Vector2( 1626, 67 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ItemConquistado" type="Label" parent="Bau"]
+visible = false
+modulate = Color( 0.890196, 0.14902, 0.14902, 1 )
+margin_left = 1554.0
+margin_top = 69.0
+margin_right = 1690.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 15 )
+text = "pipoca"
+align = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="Bau"]
+visible = false
+margin_left = 1494.0
+margin_top = 39.0
+margin_right = 1766.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Item conquistado:"
+
+[connection signal="pressed" from="botaoEsquerda" to="." method="_on_botaoEsquerda_pressed"]
+[connection signal="pressed" from="botaoDireita" to="." method="_on_botaoDireita_pressed"]
+[connection signal="pressed" from="botaoCima" to="." method="_on_botaoCima_pressed"]
+[connection signal="pressed" from="botaoBaixo" to="." method="_on_botaoBaixo_pressed"]
+[connection signal="pressed" from="botaoIniciar" to="." method="_on_botaoIniciar_pressed"]
+[connection signal="pressed" from="botaoDelete" to="." method="_on_botaoDelete_pressed"]
+[connection signal="pressed" from="Bau/Bau/BauBtn" to="Bau" method="_on_BauBtn_pressed"]

@@ -1,0 +1,783 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Imagens/spriteGirl.png" type="Texture" id=1]
+[ext_resource path="res://Imagens/Minifantasy_DesolateDesertTiles.png" type="Texture" id=2]
+[ext_resource path="res://Sons/passosSom.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Codigos/cenaCatedral.gd" type="Script" id=4]
+[ext_resource path="res://Imagens/padre.png" type="Texture" id=5]
+[ext_resource path="res://Imagens/catedral 2.png" type="Texture" id=9]
+[ext_resource path="res://Telas/transicoes/transicao.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Imagens/farolMaceio.png" type="Texture" id=11]
+[ext_resource path="res://Fonts/classic_memesbruh03.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Imagens/numericKeyboard.png" type="Texture" id=13]
+
+[sub_resource type="TileSet" id=5]
+0/name = "Minifantasy_DesolateDesertTiles.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 32, 192, 8, 8 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Minifantasy_DesolateDesertTiles.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 40, 192, 8, 8 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Minifantasy_DesolateDesertTiles.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 24, 192, 8, 8 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Minifantasy_DesolateDesertTiles.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 32, 200, 8, 8 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Minifantasy_DesolateDesertTiles.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 24, 200, 8, 8 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Minifantasy_DesolateDesertTiles.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 40, 200, 8, 8 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Minifantasy_DesolateDesertTiles.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 24, 216, 8, 8 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Minifantasy_DesolateDesertTiles.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 32, 216, 8, 8 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Minifantasy_DesolateDesertTiles.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 40, 216, 8, 8 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Minifantasy_DesolateDesertTiles.png 9"
+9/texture = ExtResource( 2 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 24, 208, 8, 8 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Minifantasy_DesolateDesertTiles.png 10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 40, 208, 8, 8 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Minifantasy_DesolateDesertTiles.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 32, 208, 8, 8 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Minifantasy_DesolateDesertTiles.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 8, 144, 8, 8 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "Minifantasy_DesolateDesertTiles.png 13"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 16, 144, 8, 8 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "Minifantasy_DesolateDesertTiles.png 14"
+14/texture = ExtResource( 2 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 8, 152, 8, 8 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "Minifantasy_DesolateDesertTiles.png 15"
+15/texture = ExtResource( 2 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 16, 152, 8, 8 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "Minifantasy_DesolateDesertTiles.png 16"
+16/texture = ExtResource( 2 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 8, 160, 8, 8 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "Minifantasy_DesolateDesertTiles.png 17"
+17/texture = ExtResource( 2 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 48, 144, 8, 8 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+18/name = "Minifantasy_DesolateDesertTiles.png 18"
+18/texture = ExtResource( 2 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 48, 152, 8, 8 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape_one_way = false
+18/shape_one_way_margin = 0.0
+18/shapes = [  ]
+18/z_index = 0
+19/name = "Minifantasy_DesolateDesertTiles.png 19"
+19/texture = ExtResource( 2 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 56, 144, 8, 8 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape_one_way = false
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 0
+20/name = "Minifantasy_DesolateDesertTiles.png 20"
+20/texture = ExtResource( 2 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 56, 152, 8, 8 )
+20/tile_mode = 0
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 0, 0 )
+20/shape_offset = Vector2( 0, 0 )
+20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape_one_way = false
+20/shape_one_way_margin = 0.0
+20/shapes = [  ]
+20/z_index = 0
+21/name = "Minifantasy_DesolateDesertTiles.png 21"
+21/texture = ExtResource( 2 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 56, 160, 8, 8 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape_one_way = false
+21/shape_one_way_margin = 0.0
+21/shapes = [  ]
+21/z_index = 0
+22/name = "Minifantasy_DesolateDesertTiles.png 22"
+22/texture = ExtResource( 2 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 24, 8, 8, 8 )
+22/tile_mode = 0
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape_one_way = false
+22/shape_one_way_margin = 0.0
+22/shapes = [  ]
+22/z_index = 0
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("andando:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("andando:stream_paused")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("andando")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("padre:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("padre:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("padre:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("personagem:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 39, 1027.96 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("personagem:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "cutsceneCatedral"
+length = 10.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("padre:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 9.4, 9.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("padre:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 9.4, 9.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("personagem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4, 3.5, 3.7, 7.51 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 39, 1027.96 ), Vector2( 176, 920 ), Vector2( 176, 920 ), Vector2( 813.5, 917.22 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("personagem:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.4, 1.65, 1.9, 2.15, 2.4, 2.65, 2.9, 3.15, 3.4, 3.65, 3.9, 4.15, 4.4, 4.65, 4.9, 5.15, 5.4, 5.65, 5.9, 6.15, 6.4, 6.65, 6.9, 7.15, 7.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6 ]
+}
+
+[sub_resource type="DynamicFont" id=19]
+size = 44
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 64
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="cena" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ceu" type="ColorRect" parent="."]
+margin_right = 1919.0
+margin_bottom = 1086.0
+color = Color( 0.34902, 0.878431, 1, 1 )
+
+[node name="andando" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1015, -114 )
+stream = ExtResource( 3 )
+stream_paused = true
+
+[node name="catedral" type="Sprite" parent="."]
+position = Vector2( 533, 28 )
+scale = Vector2( 0.74, 0.74 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="mapeamentoFundo" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = SubResource( 5 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 1900548, 12, 0, 1900549, 0, 0, 1900550, 0, 0, 1900551, 0, 0, 1900552, 0, 0, 1900553, 0, 0, 1900554, 0, 0, 1900555, 0, 0, 1900556, 0, 0, 1900557, 0, 0, 1900558, 0, 0, 1900559, 0, 0, 1900560, 0, 0, 1900561, 0, 0, 1900562, 0, 0, 1900563, 0, 0, 1900564, 0, 0, 1900565, 0, 0, 1900566, 0, 0, 1900567, 0, 0, 1900568, 0, 0, 1900569, 0, 0, 1900570, 0, 0, 1900571, 0, 0, 1900572, 0, 0, 1900573, 0, 0, 1900574, 0, 0, 1900575, 0, 0, 1900576, 0, 0, 1900577, 0, 0, 1900578, 0, 0, 1900579, 0, 0, 1900580, 0, 0, 1900581, 0, 0, 1900582, 0, 0, 1900583, 0, 0, 1900584, 0, 0, 1900585, 0, 0, 1900586, 0, 0, 1900587, 0, 0, 1900588, 0, 0, 1900589, 0, 0, 1900590, 0, 0, 1900591, 0, 0, 1900592, 0, 0, 1900593, 0, 0, 1900594, 0, 0, 1900595, 0, 0, 1900596, 0, 0, 1900597, 0, 0, 1900598, 0, 0, 1900599, 19, 0, 1966083, 12, 0, 1966084, 14, 0, 1966085, 13, 0, 1966086, 3, 0, 1966087, 3, 0, 1966088, 15, 0, 1966089, 13, 0, 1966090, 3, 0, 1966091, 3, 0, 1966092, 3, 0, 1966093, 3, 0, 1966094, 3, 0, 1966095, 3, 0, 1966096, 3, 0, 1966097, 15, 0, 1966098, 3, 0, 1966099, 15, 0, 1966100, 3, 0, 1966101, 3, 0, 1966102, 3, 0, 1966103, 15, 0, 1966104, 3, 0, 1966105, 3, 0, 1966106, 3, 0, 1966107, 3, 0, 1966108, 3, 0, 1966109, 3, 0, 1966110, 3, 0, 1966111, 3, 0, 1966112, 3, 0, 1966113, 3, 0, 1966114, 15, 0, 1966115, 3, 0, 1966116, 3, 0, 1966117, 3, 0, 1966118, 3, 0, 1966119, 3, 0, 1966120, 3, 0, 1966121, 3, 0, 1966122, 15, 0, 1966123, 3, 0, 1966124, 3, 0, 1966125, 3, 0, 1966126, 3, 0, 1966127, 3, 0, 1966128, 3, 0, 1966129, 3, 0, 1966130, 3, 0, 1966131, 3, 0, 1966132, 3, 0, 1966133, 3, 0, 1966134, 3, 0, 1966135, 20, 0, 1966136, 19, 0, 2031618, 12, 0, 2031619, 14, 0, 2031620, 14, 0, 2031621, 11, 0, 2031622, 11, 0, 2031623, 11, 0, 2031624, 11, 0, 2031625, 11, 0, 2031626, 11, 0, 2031627, 11, 0, 2031628, 11, 0, 2031629, 11, 0, 2031630, 11, 0, 2031631, 11, 0, 2031632, 11, 0, 2031633, 11, 0, 2031634, 11, 0, 2031635, 11, 0, 2031636, 11, 0, 2031637, 11, 0, 2031638, 11, 0, 2031639, 11, 0, 2031640, 11, 0, 2031641, 11, 0, 2031642, 11, 0, 2031643, 11, 0, 2031644, 11, 0, 2031645, 11, 0, 2031646, 11, 0, 2031647, 11, 0, 2031648, 11, 0, 2031649, 11, 0, 2031650, 11, 0, 2031651, 11, 0, 2031652, 11, 0, 2031653, 11, 0, 2031654, 11, 0, 2031655, 11, 0, 2031656, 11, 0, 2031657, 11, 0, 2031658, 11, 0, 2031659, 11, 0, 2031660, 11, 0, 2031661, 11, 0, 2031662, 11, 0, 2031663, 11, 0, 2031664, 11, 0, 2031665, 11, 0, 2031666, 11, 0, 2031667, 11, 0, 2031668, 11, 0, 2031669, 11, 0, 2031670, 11, 0, 2031671, 20, 0, 2031672, 20, 0, 2031673, 19, 0, 2097153, 12, 0, 2097154, 14, 0, 2097155, 14, 0, 2097156, 16, 0, 2097157, 7, 0, 2097158, 7, 0, 2097159, 7, 0, 2097160, 7, 0, 2097161, 7, 0, 2097162, 7, 0, 2097163, 7, 0, 2097164, 7, 0, 2097165, 7, 0, 2097166, 7, 0, 2097167, 7, 0, 2097168, 7, 0, 2097169, 7, 0, 2097170, 7, 0, 2097171, 7, 0, 2097172, 7, 0, 2097173, 7, 0, 2097174, 7, 0, 2097175, 7, 0, 2097176, 7, 0, 2097177, 7, 0, 2097178, 7, 0, 2097179, 7, 0, 2097180, 7, 0, 2097181, 7, 0, 2097182, 7, 0, 2097183, 7, 0, 2097184, 7, 0, 2097185, 7, 0, 2097186, 7, 0, 2097187, 7, 0, 2097188, 7, 0, 2097189, 7, 0, 2097190, 7, 0, 2097191, 7, 0, 2097192, 7, 0, 2097193, 7, 0, 2097194, 7, 0, 2097195, 7, 0, 2097196, 7, 0, 2097197, 7, 0, 2097198, 7, 0, 2097199, 7, 0, 2097200, 7, 0, 2097201, 7, 0, 2097202, 7, 0, 2097203, 7, 0, 2097204, 7, 0, 2097205, 7, 0, 2097206, 7, 0, 2097207, 21, 0, 2097208, 20, 0, 2097209, 20, 0, 2097210, 19, 0, 2162688, 12, 0, 2162689, 14, 0, 2162690, 14, 0, 2162691, 16, 0, 2162692, 7, 0, 2162693, 7, 0, 2162694, 7, 0, 2162695, 7, 0, 2162696, 7, 0, 2162697, 7, 0, 2162698, 7, 0, 2162699, 7, 0, 2162700, 7, 0, 2162701, 7, 0, 2162702, 7, 0, 2162703, 7, 0, 2162704, 7, 0, 2162705, 7, 0, 2162706, 7, 0, 2162707, 7, 0, 2162708, 7, 0, 2162709, 7, 0, 2162710, 7, 0, 2162711, 7, 0, 2162712, 7, 0, 2162713, 7, 0, 2162714, 7, 0, 2162715, 7, 0, 2162716, 7, 0, 2162717, 7, 0, 2162718, 7, 0, 2162719, 7, 0, 2162720, 7, 0, 2162721, 7, 0, 2162722, 7, 0, 2162723, 7, 0, 2162724, 7, 0, 2162725, 7, 0, 2162726, 7, 0, 2162727, 7, 0, 2162728, 7, 0, 2162729, 7, 0, 2162730, 7, 0, 2162731, 7, 0, 2162732, 7, 0, 2162733, 7, 0, 2162734, 7, 0, 2162735, 7, 0, 2162736, 7, 0, 2162737, 7, 0, 2162738, 7, 0, 2162739, 7, 0, 2162740, 7, 0, 2162741, 7, 0, 2162742, 7, 0, 2162743, 7, 0, 2162744, 21, 0, 2162745, 20, 0, 2162746, 20, 0, 2162747, 19, 0 )
+
+[node name="personagem" type="Sprite" parent="."]
+position = Vector2( 39, 1027.96 )
+scale = Vector2( 0.2025, 0.2025 )
+texture = ExtResource( 1 )
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="cenaCatedral" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 16 )
+anims/cutsceneCatedral = SubResource( 17 )
+
+[node name="padre" type="Sprite" parent="."]
+visible = false
+position = Vector2( 971, 912 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 2
+
+[node name="diálogo" type="Node2D" parent="."]
+visible = false
+
+[node name="fundo" type="ColorRect" parent="diálogo"]
+light_mask = 2
+margin_left = -94.0
+margin_top = -36.0
+margin_right = 1960.0
+margin_bottom = 1120.0
+color = Color( 0, 0, 0, 0.411765 )
+
+[node name="fundo2" type="ColorRect" parent="diálogo"]
+margin_left = 388.0
+margin_top = 101.0
+margin_right = 1568.0
+margin_bottom = 342.0
+color = Color( 0.956863, 0.929412, 0.929412, 0.411765 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="fundo3" type="ColorRect" parent="diálogo/fundo2"]
+margin_left = -3.0
+margin_top = 1.0
+margin_right = 1177.0
+margin_bottom = 242.0
+color = Color( 0.956863, 0.929412, 0.929412, 0.411765 )
+
+[node name="caixaDialogo" type="Label" parent="diálogo"]
+margin_left = 400.0
+margin_top = 118.0
+margin_right = 1551.0
+margin_bottom = 321.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 19 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Light2D" type="Light2D" parent="diálogo"]
+position = Vector2( 812.5, 926.25 )
+scale = Vector2( 0.536458, 1.375 )
+texture = ExtResource( 11 )
+color = Color( 1, 1, 1, 0 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="Light2D2" type="Light2D" parent="diálogo"]
+position = Vector2( 974.75, 913.125 )
+scale = Vector2( 0.606771, 1.4838 )
+texture = ExtResource( 11 )
+color = Color( 1, 1, 1, 0 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="botaoPassar" type="Button" parent="diálogo"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 1923.0
+margin_bottom = 1082.0
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+icon_align = 1
+expand_icon = true
+
+[node name="resposta" type="Label" parent="."]
+visible = false
+margin_left = 793.0
+margin_top = 394.0
+margin_right = 1154.0
+margin_bottom = 457.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+custom_styles/normal = SubResource( 22 )
+align = 1
+valign = 1
+
+[node name="teclado" type="Node2D" parent="."]
+visible = false
+
+[node name="tecladoNumerico" type="Sprite" parent="teclado"]
+light_mask = 0
+position = Vector2( 281, 631 )
+scale = Vector2( 0.610714, 0.610714 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button0" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 0, 0, 0, 0 )
+margin_left = -262.0
+margin_top = -396.0
+margin_right = -104.0
+margin_bottom = -202.0
+
+[node name="Button1" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -81.0
+margin_top = -389.0
+margin_right = 88.0
+margin_bottom = -206.0
+
+[node name="Button2" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 93.0
+margin_top = -395.0
+margin_right = 262.0
+margin_bottom = -205.0
+
+[node name="Button3" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -261.0
+margin_top = -194.0
+margin_right = -100.0
+margin_bottom = -6.0
+
+[node name="Button4" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_top = -195.0
+margin_right = 81.0
+margin_bottom = -11.0
+
+[node name="Button5" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 94.0
+margin_top = -201.0
+margin_right = 272.0
+margin_bottom = -14.0
+
+[node name="Button6" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -265.0
+margin_top = 3.0
+margin_right = -96.0
+margin_bottom = 198.0
+
+[node name="Button7" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -87.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 186.0
+
+[node name="Button8" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 93.0
+margin_top = 5.0
+margin_right = 257.0
+margin_bottom = 192.0
+
+[node name="Button9" type="Button" parent="teclado/tecladoNumerico"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_top = 206.0
+margin_right = 82.0
+margin_bottom = 393.0
+
+[node name="delet" type="Sprite" parent="teclado"]
+light_mask = 2
+position = Vector2( 1123.75, 424.25 )
+scale = Vector2( 0.368182, 0.368182 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="deletBtn" type="Button" parent="teclado/delet"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -58.0
+margin_top = -44.0
+margin_right = 52.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="enviar" type="Label" parent="teclado"]
+margin_left = 1465.0
+margin_top = 553.0
+margin_right = 1852.0
+margin_bottom = 681.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+custom_styles/normal = SubResource( 21 )
+text = "ENVIAR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="enviarBtn" type="Button" parent="teclado/enviar"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 254.0
+margin_bottom = 100.0
+
+[node name="transicao" parent="." instance=ExtResource( 10 )]
+
+[connection signal="pressed" from="diálogo/botaoPassar" to="." method="_on_botaoPassar_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button0" to="." method="_on_Button0_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="teclado/tecladoNumerico/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="teclado/delet/deletBtn" to="." method="_on_deletBtn_pressed"]
+[connection signal="pressed" from="teclado/enviar/enviarBtn" to="." method="_on_enviarBtn_pressed"]
