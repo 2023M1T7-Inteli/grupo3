@@ -1,14 +1,12 @@
 # Inteli - Instituto de Tecnologia e Liderança 
 
-<p align="center">
-<img src="grupo3/imagens/game.jpg"></img>
-</p>
-
 BUMBA CODE
 
 Grupo Mandaracu
 
 ## Integrantes: <a href="https://github.com/kaianes/Tutorial_M1_Kaiane_Souza">Kaiane Souza</a>, <a href="https://github.com/pelinsarix/Tutorial_M1_Gabriel_Ribeiro">Gabriel Pelinsari</a>, <a href="https://github.com/jjrkkj/Tutorial_M1_Joselito_Carvalho">Joselito Junior</a>, <a href="https://github.com/vitorianovaes">Vitoria Novais</a>, <a href="https://github.com/DiogoBurgierman/Tutorial_M1_Diogo_Burgierman">Diogo Burgierman</a>, <a href="https://github.com/Freddyharari/Tutorial_M1_freddy_harari">Freddy Harari</a>, <a href="https://github.com/PatrickSavoia/Tutorial_M1_Patrick_Savoia">Patrick Savoia</a>
+
+<img src="/imagens/game.jpg" alt="fotogrupo" border="0">
 
 ## Descrição
 
