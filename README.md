@@ -1,7 +1,7 @@
 # Inteli - Instituto de Tecnologia e Liderança 
 
 <p align="center">
-  <a img scr="imagens/game.jpg">
+<img src="grupo3/imagens/game.jpg"></img>
 </p>
 
 BUMBA CODE
@@ -65,8 +65,8 @@ Encontre o BumbaCode.exe na pasta executáveis e execute-o como qualquer outro p
 
 <b>HTML:</b>
 
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+Não há instalação! Só entrar no seguinte link:
+(https://2023m1t7-inteli.github.io/grupo3/)
 
 ## 💻 Configuração para Desenvolvimento
 
