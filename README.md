@@ -96,7 +96,7 @@ Para abrir este projeto você necessita das seguintes ferramentas:
     * UPDATE: Finalização da implementação de mecânicas do jogo.
     * NEW: Deploy.
 * 5.0 - 07/04/2023
-* UPDATE: Revisão, ajustates, testes e deploy final do produto (MVP do jogo).
+    * UPDATE: Revisão, ajustates, testes e deploy final do produto (MVP do jogo).
 
 ## 📋 Licença/License
 
