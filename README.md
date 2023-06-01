@@ -42,11 +42,8 @@ Essa obra conta com a representação cultural e espacial de Alagoas, local onde
     |-->Imagens<br>
     |-->Sons<br>
     |-->Telas<br>
-|versões<br>
-    |-->projetoMandacaru_v1.0<br>
-    |-->projetoMandacaru_v2.0<br>
-    |-->projetoMandacaru_v3.0<br>
-    |-->projetoMandacaru_v4.0<br>
+    |-->Versões<br>
+
 
 |LICENSE<br>
 |readme.md<br>
